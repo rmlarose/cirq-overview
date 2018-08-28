@@ -16,9 +16,9 @@
 
 import cirq
 
+import numpy as np
 import sys
 import time
-import numpy as np
 
 # =============================================================================
 # functions
@@ -85,6 +85,10 @@ def sim_test(nqubits, depth, nreps,
 # =============================================================================
 
 def main():
+    """
+    Main function for the script.
+    """
+    # grab user input    
     if len(sys.argv) >= 2:
         nqubits = int(sys.argv[1])
     else:
@@ -101,7 +105,8 @@ def main():
         verbose=True
     else:
         verbose=False
-    
+        
+    # run the simulator test and print the results
     print(nqubits, depth, 
           shots, sim_test(nqubits, depth, shots, verbose=verbose))
     

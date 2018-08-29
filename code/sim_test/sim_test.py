@@ -28,7 +28,30 @@ def sim_test(nqubits, depth, nreps,
              insert_strategy=cirq.InsertStrategy.EARLIEST, 
              verbose=False):
     """
-    Simulator test for Cirq.
+    Cirq XmonSimulator test for a circuit structure of layers consisting of
+    random one qubit rotations and CNOTs between all qubits.
+    
+    input:
+        nqubits [type: int]
+            number of qubits in the circuit
+            
+        depth [type: int]
+            number of layers (described above) in the circuit
+            
+        nreps [type: int]
+            number of times to run the circuit as per the keyword argument
+            'repetitions' in the method cirq.google.XmonSimulator.run.
+            
+        insert_strategy [type: cirq.InsertStrategy,
+                         default = cirq.InsertStrategy.EARLIEST]
+            insert strategy for new gates in the circuit
+        
+        verbose [type: bool,
+                 default = False]
+            flag for verbose output to console (prints out circuit)
+            
+    returns:
+        (runtime of simulating the circuit) / nreps
     """
     # get a simulator
     simulator = cirq.google.XmonSimulator()
@@ -44,7 +67,7 @@ def sim_test(nqubits, depth, nreps,
     def rot(qubit, params):
         """
         Helper function to return an arbitrary rotation of the form
-        R = Rx(params[0]) * Ry(params[1]) * Rz(params[2])
+        R = Rz(params[2]) * Ry(params[1]) * Rx(params[0])
         on the qubit.
         """
         rx = cirq.RotXGate(half_turns=params[0])

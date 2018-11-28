@@ -62,7 +62,7 @@ def hst(length=4):
     for ii in range(length // 2):
         circ.append(cirq.CNOT.on(qbits[ii], qbits[ii + length // 2]),
                     strategy=cirq.InsertStrategy.EARLIEST)
-        
+
     print(circ)
     
 # =============================================================================

@@ -70,16 +70,16 @@ def sim_test(nqubits, depth, nreps,
         R = Rz(params[2]) * Ry(params[1]) * Rx(params[0])
         on the qubit.
         """
-        rx = cirq.RotXGate(half_turns=params[0])
-        ry = cirq.RotYGate(half_turns=params[1])
-        rz = cirq.RotZGate(half_turns=params[2])
+        rx = cirq.Rx(rads=params[0])
+        ry = cirq.Ry(rads=params[1])
+        rz = cirq.Rz(rads=params[2])
         
         yield (rx(qubit), ry(qubit), rz(qubit))
 
     for _ in range(depth):
         # append random single qubit rotations
         for q in qbits:
-            circ.append(rot(q, 2 * np.random.rand(3) - 1),
+            circ.append(rot(q, 2 * np.pi * np.random.rand(3)),
                         strategy=insert_strategy)
 
         # get a random control qubit for cnots

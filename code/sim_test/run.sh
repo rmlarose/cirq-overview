@@ -19,9 +19,9 @@ outfname="timing_$today.txt"
 # main testing
 # ============
 
-for n in 10 11 12 13 14 15 16
+for n in 10 12 14 16 18 20 22
 do
-    for depth in 5 10 15 20 25 30
+    for depth in 10 20 30 40 50
     do
         python sim_test.py $n $depth 1 >> timing/$outfname
     done

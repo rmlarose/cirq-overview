@@ -21,9 +21,10 @@ outfname="timing_$today.txt"
 
 for n in 10 12 14 16 18 20 22 24
 do
-    echo $n
+    echo "n=$n"
     for depth in 20 40 60 80 100
     do
-        python sim_test.py $n $depth 1 >> timing/$outfname
+	echo "depth=$depth"
+        python sim_test.py $n $depth 1 1 >> timing/$outfname
     done
 done

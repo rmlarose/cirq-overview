@@ -26,7 +26,7 @@ import time
 
 def sim_test(nqubits, depth, nreps, 
              insert_strategy=cirq.InsertStrategy.EARLIEST, 
-             verbose=False):
+             verbose=False, sim_type=0):
     """
     Cirq XmonSimulator test for a circuit structure of layers consisting of
     random one qubit rotations and CNOTs between all qubits.
@@ -49,12 +49,19 @@ def sim_test(nqubits, depth, nreps,
         verbose [type: bool,
                  default = False]
             flag for verbose output to console (prints out circuit)
-            
+
+        sim_type [type: bool]
+            what simulator to use in the timing analysis
+            0 = cirq.google.XmonSimulator
+            1 = cirq.Simulator
+
     returns:
         (runtime of simulating the circuit) / nreps
     """
     # get a simulator
     simulator = cirq.google.XmonSimulator()
+    if sim_type == 1:
+        simulator = cirq.Simulator()
     
     # get some qubits and a circuit
     qbits = [cirq.LineQubit(x) for x in range(nqubits)]
@@ -127,13 +134,20 @@ def main():
     else:
         shots = 1
     if len(sys.argv) >= 5:
-        verbose=True
+        if sys.argv[4] == 0:
+            verbose = False
+        else:
+            verbose = True
     else:
-        verbose=False
-        
+        verbose = False
+    if len(sys.argv) >= 6:
+        sim = int(sys.argv[5])
+    else:
+        sim = 0
+
     # run the simulator test and print the results
     print(nqubits, depth, 
-          shots, sim_test(nqubits, depth, shots, verbose=verbose))
+          shots, sim_test(nqubits, depth, shots, verbose=False, sim_type=sim))
     
 # =============================================================================
 # script

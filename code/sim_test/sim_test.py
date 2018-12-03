@@ -21,6 +21,18 @@ import sys
 import time
 
 # =============================================================================
+# constants
+# =============================================================================
+
+# one qubit operations dictionary
+oneq_ops = {1 : cirq.X,
+            2 : cirq.Y,
+            3 : cirq.Z,
+            4 : cirq.H,
+            5 : cirq.X ** 0.5,
+            6 : cirq.T}
+
+# =============================================================================
 # functions
 # =============================================================================
 
@@ -28,7 +40,7 @@ def sim_test(nqubits, depth, nreps,
              insert_strategy=cirq.InsertStrategy.EARLIEST, 
              verbose=False, sim_type=0):
     """
-    Cirq XmonSimulator test for a circuit structure of layers consisting of
+    Cirq Simulator test for a circuit structure of layers consisting of
     random one qubit rotations and CNOTs between all qubits.
     
     input:
@@ -111,6 +123,43 @@ def sim_test(nqubits, depth, nreps,
     start = time.time()
     simulator.run(circ, repetitions=nreps)
     return (time.time() - start) / nreps
+
+def random_circuit(num_qubits, depth, 
+                   oneq_ops_dict=oneq_ops):
+    """Returns a circuit with one qubit gates selected at random from
+    'oneq_ops_dict' for a specified number of qubits 'num_qubits'
+    and depth 'depth'.
+    
+    Args:
+        num_qubits [type: int]
+            number of qubits in the circuit
+
+        depth [type: int]
+            number of single qubit gates to append to the circuit
+
+        oneq_ops_dict [type: dict]
+            dictionary of one qubit operations with (key, value) pairs that
+            consist of (integer key, gate)
+
+    Returns:
+        A cirq.Circuit with 'num_qubits' qubits and 'depth' total single
+        qubit gates selected at random from 'oneq_ops_dict'.
+    """
+    # create a circuit
+    circ = cirq.Circuit()
+
+    # loop over the depth
+    for _ in range(depth):
+        # select random integers corresponding to gates to append to circuit
+        op_keys = np.random.randint(1, len(oneq_ops) + 1, num_qubits)
+
+        # append the gates to the circuit
+        circ.append(
+            [oneq_ops[key](q) for (q, key) in enumerate(op_keys)],
+            strategy=cirq.InsertStrategy.EARLIEST
+            )
+
+    return circ
 
 # =============================================================================
 # main 

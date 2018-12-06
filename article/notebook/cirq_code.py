@@ -147,6 +147,7 @@ def random_circuit(num_qubits, depth,
     """
     # create a circuit
     circ = cirq.Circuit()
+    qbits = [cirq.LineQubit(x) for x in range(num_qubits)]
 
     # loop over the depth
     for _ in range(depth):
@@ -155,11 +156,11 @@ def random_circuit(num_qubits, depth,
 
         # append the gates to the circuit
         circ.append(
-            [oneq_ops[key](q) for (q, key) in enumerate(op_keys)],
+            [oneq_ops[key](qbits[q]) for (q, key) in enumerate(op_keys)],
             strategy=cirq.InsertStrategy.EARLIEST
             )
 
-    return circ
+    return circ, qbits
 
 # =============================================================================
 # main 

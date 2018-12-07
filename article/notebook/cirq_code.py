@@ -17,7 +17,6 @@
 import cirq
 
 import numpy as np
-import sys
 import time
 
 # =============================================================================
@@ -162,46 +161,16 @@ def random_circuit(num_qubits, depth,
 
     return circ, qbits
 
-# =============================================================================
-# main 
-# =============================================================================
+def rot(qubit, params):
+        """Helper function that returns an arbitrary rotation of the form
+        R = Rz(params[2]) * Ry(params[1]) * Rx(params[0])
+        on the qubit, e.g. R |qubit>.
 
-def main():
-    """
-    Main function for the script.
-    """
-    # grab user input    
-    if len(sys.argv) >= 2:
-        nqubits = int(sys.argv[1])
-    else:
-        nqubits = 2
-    if len(sys.argv) >= 3:
-        depth = int(sys.argv[2])
-    else:
-        depth = 3
-    if len(sys.argv) >= 4:
-        shots = int(sys.argv[3])
-    else:
-        shots = 1
-    if len(sys.argv) >= 5:
-        if sys.argv[4] == 0:
-            verbose = False
-        else:
-            verbose = True
-    else:
-        verbose = False
-    if len(sys.argv) >= 6:
-        sim = int(sys.argv[5])
-    else:
-        sim = 0
+        Note that order is reversed when put into the circuit. The circuit is:
+        |qubit>---Rx(params[0])---Ry(params[1])---Rz(params[2])---
+        """
+        rx = cirq.Rz(params[0])
+        ry = cirq.Rx(params[1])
+        rz = cirq.Rz(params[2])
 
-    # run the simulator test and print the results
-    print(nqubits, depth, 
-          shots, sim_test(nqubits, depth, shots, verbose=False, sim_type=sim))
-    
-# =============================================================================
-# script
-# =============================================================================
-    
-if __name__ == "__main__":
-    main()
+        yield (rx(qubit), ry(qubit), rz(qubit))

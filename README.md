@@ -1,2 +1,4 @@
-# cirq-overview
-Companion code and data for the paper Cirq: A First Look and Comparative Analysis
+# Practical Quantum Computing with Cirq
+Companion notebook and code for the article "Practical Quantum Computing with Cirq."
+
+Link to Aricle:

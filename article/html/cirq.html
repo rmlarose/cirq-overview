@@ -11785,7 +11785,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="-Abstract-"><p style="text-align: center;"> Abstract </p><a class="anchor-link" href="#-Abstract-">&#182;</a></h3><p style="text-align: justify;"> In July 2018, the <a href="https://quantumcomputingreport.com">Quantum Computing Report</a> published an <a href="https://quantumcomputingreport.com/wp-content/uploads/2018/06/Overview-and-Comparison-of-Gate-Level-Quantum-Software-Platforms-Final-June-21-2018.pdf">in-depth analysis of four major gate-model quantum software platforms</a>: pyQuil by Rigetti, QISKit by IBM, ProjectQ by ETH Zurich, and the Quantum Developer Kit by Microsoft. Shortly after, Google announced the release of their own quantum software platform: Cirq. In this paper, we provide an overview and comparative analysis of this newly-released software in reference to the previously-reviewed quantum software platforms. Our analysis proceeds similarly by covering language syntax through example programs, library support, quantum simulators, and quantum computer capabilities. We additionally cover more advanced features of the software including the strong support for variational quantum algorithms and near-term quantum computing. </p>
+<h3 id="-Abstract-"><p style="text-align: center;"> Abstract </p><a class="anchor-link" href="#-Abstract-">&#182;</a></h3><p style="text-align: justify;"> In July 2018, the <a href="https://quantumcomputingreport.com">Quantum Computing Report</a> published an <a href="https://quantumcomputingreport.com/wp-content/uploads/2018/06/Overview-and-Comparison-of-Gate-Level-Quantum-Software-Platforms-Final-June-21-2018.pdf">in-depth analysis of four major gate-model quantum software platforms</a>: Forest by Rigetti, QISKit by IBM, ProjectQ by ETH Zurich, and the Quantum Developer Kit by Microsoft. Shortly after, Google announced the release of their own quantum software platform: Cirq. In this paper, we provide an overview and comparative analysis of this newly-released platform with respect to the previously-reviewed quantum software platforms. Our analysis proceeds similarly by covering requirements and installation, language syntax through example programs, quantum simulators, and quantum computer capabilities. We additionally cover more advanced features of the platform including quantum circuit manipulation/optimization, device-oriented circuits and quantum compiling, and strong support for variational quantum algorithms and near-term quantum computing. </p>
 </div>
 </div>
 </div>
@@ -11823,7 +11823,7 @@ This theoretical-to-practical progression of the field necessitates access to qu
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p style="text-align: justify;"> 
-For most "full-stack" quantum computing companies, access to quantum computers is granted over the cloud, and the interaction between research scientists and quantum computers is mediated by a software platform with API access. To an outside observer, this interaction does not warrant much thought: it just needs to allow users to implement quantum gates on qubits. However, many practical considerations emerge when using a software interface to communicate with a real or simulated quantum computer. Among these are the following:
+For most "full-stack" quantum computing companies, access to quantum computers is granted over the cloud, and the interaction between research scientists and quantum computers is mediated by a software platform with API access. To an outside observer, this interaction does not warrant much thought: it just needs to give users the ability to implement quantum gates on qubits. However, many practical considerations emerge when using a software interface to communicate with a real or simulated quantum computer. Among these are the following:
 </p><ol>
 <li>What gate operations are natively built-in?</li>
 <li>Can a gate that's not native be implemented into a quantum algorithm? How difficult is it to do this?</li>
@@ -11837,11 +11837,11 @@ For most "full-stack" quantum computing companies, access to quantum computers i
 <li>How easy is it to parametrize algorithms for near-term quantum computing?</li>
 </ol>
 <p style="text-align: justify;"> 
-Each of these considerations is important from a practical perspective. For example, an algorithm on many qubits may be better implemented on a software platform with a more high-performance simulator; an algorithm with many gates may be better for a platform with higher fidelity qubits; an algorithm with many non-standard gates may be better for a platform with an optimal compiler. Other considerations such as examples, tutorials, and documentation are equally important as they help bring in new users and answer questions of experienced users.
+Each of these considerations is important from a practical perspective. For example, an algorithm on many qubits may be better implemented on a platform with a more high-performance simulator; an algorithm with many gates may be better for a platform with higher fidelity qubits; an algorithm with many non-standard gates may be better for a platform with an optimal compiler. Other considerations such as examples, tutorials, and documentation are equally important as they help bring in new users and answer questions of experienced users.
 </p><p style="text-align: justify;"> 
 For these reasons, it is both valid and important to evaluate quantum software platforms as more than the simple interface they may appear to be. To this end, the Quantum Computing Report published an article <a href="#LaR2018">[LaR2018]</a> comparing Forest by Rigetti, QISKit by IBM, ProjectQ by ETH Zurich, and the Quantum Developer Kit by Microsoft. Each platform was found to have different strengths and different emphases that determined the set of problems best-suited for the environment. The purpose of this article is to introduce and analyze Cirq in a similar fashion.
 </p><p style="text-align: justify;"> 
-To this end, the rest of the article is organized as follows. After briefly commenting on the format of this article, we cover installation, documentation, language syntax, and quantum computer/simulator support in Cirq. We then transition into more advanced features like circuit manipulation and optimization. Lastly, we conclude with an example of a variational quantum algorithm to demonstrate the near-term capabilities of Cirq. Throughout, we refer back to previously covered software platforms to maintain the comparative analysis in our previous installation.
+To this end, the rest of the article is organized as follows. After briefly commenting on the format of this article, we cover installation, documentation, language syntax, and quantum computer/simulator support in Cirq. We then transition into more advanced features like circuit manipulation and optimization and circuits for a partcular quantum computer. Lastly, we conclude with example programs including a variational quantum algorithm to demonstrate the near-term capabilities of Cirq. Throughout, we refer back to previously covered software platforms to maintain the comparative analysis in our previous installation.
 </p>
 </div>
 </div>
@@ -11859,7 +11859,7 @@ To this end, the rest of the article is organized as follows. After briefly comm
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p style="text-align: justify;"> 
-This article was written as a Jupyter Notebook and exported as an HTML file. The HTML file is hosted on the [Quantum Computing Report website](https://quantumcomputingreport.com) and the Jupyter notebook is hosted on [GitHub](https://github.com/rmlarose). In the HTML version, all code and all outputs are visible in the article, but the code is not able to run. To interactively run the code while reading through the article, see the Jupyter Notebook version. In order to run the code, a working installation of Cirq is required (see <i>Installation</i> below). The Cirq code in the notebook version will be kept up-to-date with future versions/releases of Cirq. The article also assumes basic familarity with quantum computing, for which many good [resources](https://quantumcomputingreport.com/resources/education/) now exist.
+This article was written as a Jupyter Notebook and exported as an HTML file. The HTML file is hosted on the <a href="https://quantumcomputingreport.com">Quantum Computing Report website</a> and the Jupyter notebook is hosted on <a href="https://github.com/rmlarose/cirq-overview">GitHub</a>. In the HTML version, all code and all outputs are visible in the article, but the code is not able to run. To interactively run the code while reading through the article, see the Jupyter Notebook version. In order to run the code, a working installation of Cirq is required (see <i>Installation</i> below). The Cirq code in the notebook version will be kept up-to-date with future versions/releases of Cirq. The article assumes basic familiarity with quantum computing, for which many good <a href="https://quantumcomputingreport.com/resources/education/">resources</a> now exist.
 </p>
 </div>
 </div>
@@ -11915,7 +11915,7 @@ This article was written as a Jupyter Notebook and exported as an HTML file. The
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p style="text-align: justify;"> 
-Cirq is an open-source Python framework for "creating, editing, and invoking Noisy Intermediate-Scale Quantum (NISQ) circuits" <a name="#Al2018">[Al2018]</a>. The first version of the software was publicly announced in July 2018; the code is still in alpha testing and under development. As such, some features or code included in this article may need modifications for future versions of Cirq. This article should be considered a review for the version of Cirq at the time of writing, which is listed in the table above. (As mentionec above, the Jupyter Notebook version of this article, hosted online at [GitHub](https://github.com/rmlarose), will be kept up to date as future versions of Cirq are released.)
+Cirq is an open-source Python framework for "creating, editing, and invoking Noisy Intermediate-Scale Quantum (NISQ) circuits" <a name="#Al2018">[Al2018]</a>. The first version of the software was publicly announced in July 2018; the code is still in alpha testing and under development. As such, some features or code included in this article may need modifications for future versions of Cirq. This article should be considered a review for the version of Cirq at the time of writing, which is listed in the table above. (As mentioned above, the Jupyter Notebook version of this article, hosted online at [GitHub](https://github.com/rmlarose), will be kept up to date as future versions of Cirq are released.)
 </p>
 </div>
 </div>
@@ -11945,17 +11945,17 @@ Cirq is an open-source Python framework for "creating, editing, and invoking Noi
 
 <pre><code>pip install cirq</code></pre>
 <p style="text-align: justify;"> 
-at a command line. Without leaving the notebook, executing the cell below will try to install Cirq on the users computer. Alternatively, the source code for Cirq can be obtained from <a href="https://github.com/quantumlib/Cirq">https://github.com/quantumlib/Cirq</a>. For complete installation instructions on multiple platforms, see the documentation at <a href="https://cirq.readthedocs.io/en/latest/install.html">https://cirq.readthedocs.io/en/latest/install.html</a>. Readers who simply wish to read the article without using Cirq can ignore this step.
+at a command line. Without leaving the notebook, executing the cell below will try to install Cirq on the user's computer. Alternatively, the source code for Cirq can be obtained from <a href="https://github.com/quantumlib/Cirq">https://github.com/quantumlib/Cirq</a>. For complete installation instructions on multiple platforms, see the documentation at <a href="https://cirq.readthedocs.io/en/latest/install.html">https://cirq.readthedocs.io/en/latest/install.html</a>. Readers who simply wish to read the article without using Cirq can ignore this step.
 </p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;Attempts to pip install Cirq without leaving the notebook.&quot;&quot;&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;Attempts to pip install the latest version of Cirq without leaving the notebook.&quot;&quot;&quot;</span>
 <span class="c1">#!pip install --upgrade pip</span>
 <span class="c1">#!pip install cirq</span>
 </pre></div>
@@ -11970,13 +11970,13 @@ at a command line. Without leaving the notebook, executing the cell below will t
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[1]:</div>
+<div class="prompt output_prompt">Out[2]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;Attempts to pip install Cirq without leaving the notebook.&#39;</pre>
+<pre>&#39;Attempts to pip install the latest version of Cirq without leaving the notebook.&#39;</pre>
 </div>
 
 </div>
@@ -12016,14 +12016,14 @@ The <a href="https://cirq.readthedocs.io/en/latest/install.html">documentation f
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p style="text-align: justify;"> 
-As in our previous coverage of quantum software platforms, we include example programs to demonstrate the language syntax. Below, we implement the "quantum random bit generator" algorithm. To use the functionality of Cirq, we first import the library (and additional libraries we'll use throughout the article).
+As in our previous coverage of quantum software platforms, we include example programs to demonstrate the language syntax. Below, we implement the "quantum random bit generator" algorithm, which produces either zero or one output that is random by the laws of quantum mechanics. To use the functionality of Cirq, we first import the library (and additional libraries we'll use throughout the article).
 </p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;Library imports for the article.&quot;&quot;&quot;</span>
@@ -12051,7 +12051,7 @@ In what follows we create a circuit and instantiate it with the operations for t
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;Create a random number generator circuit using Cirq.&quot;&quot;&quot;</span>
@@ -12076,7 +12076,7 @@ In what follows we create a circuit and instantiate it with the operations for t
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p style="text-align: justify;"> 
-Note that Cirq defines qubits to be `LineQubit`s or `GridQubit`s, since these are common constructions in NISQ computers. The former is indexed by one integer, as we have done in Line 4 above, and the latter by two (x, y coordinates). Qubits are commonly defined in lists (or generally iterables) for easy indexing in algorithms. In Line 7 above we instantiate a circuit, and in Line 10 we append the instructions for the algorithm. (There are multiple ways to add instructions to an algorithm in Cirq. For most of this article, we'll stick to the above method for simplicity. See Section III.A for alternatives.)
+Note that Cirq defines qubits to be `LineQubit`s or `GridQubit`s, since these are common constructions in NISQ computers. The former is indexed by one integer, as we have done in Line 4 above, and the latter by two (x, y coordinates). Qubits are commonly defined in lists (or generally iterables) for easy indexing in algorithms. In line 6 above we instantiate a circuit, and in lines 9-10 we append the instructions for the algorithm. (There are multiple ways to add instructions to an algorithm in Cirq. For most of this article, we'll stick to the above method for simplicity. See Section III.A for alternatives.)
 </p><p style="text-align: justify;"> 
 The Cirq library provides text diagram representation of quantum circuits, which can be visualized by printing out the circuit:
 </p>
@@ -12085,7 +12085,7 @@ The Cirq library provides text diagram representation of quantum circuits, which
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;Print out the random number generator circuit.&quot;&quot;&quot;</span>
@@ -12138,7 +12138,7 @@ While these diagrams are not of publication quality like those that can be made 
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><p style="text-align: justify;"> 
-Cirq does not currently provide cloud access to it's quantum computers for general users. Indeed, as per the documentation in <a href="https://github.com/quantumlib/Cirq/blob/master/cirq/google/engine/engine.py">Cirq's engine class</a>:</p>
+Cirq does not currently provide cloud access to its quantum computers for general users. Indeed, as per the documentation in <a href="https://github.com/quantumlib/Cirq/blob/master/cirq/google/engine/engine.py">Cirq's engine class</a>:</p>
 <p style="text-align: justify;"> 
 </div>
 </div>
@@ -12166,7 +12166,7 @@ Nonetheless, it is known that Google has quantum computers that have been stated
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;Print out the architecture of the FoxTail quantum computer.&quot;&quot;&quot;</span>
@@ -12213,7 +12213,7 @@ Nonetheless, it is known that Google has quantum computers that have been stated
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;Print out the architecture of the Bristlecone quantum computer.&quot;&quot;&quot;</span>
@@ -12280,14 +12280,32 @@ Nonetheless, it is known that Google has quantum computers that have been stated
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>It should be noted that Cirq provides built-in functionality to convert it's circuits to OpenQASM code:</p>
+<p style="text-align: justify;">
+The Foxtail and Bristlecone processors implement a Controlled-$Z$ gate as their two-qubit unitary (as opposed to a CNOT gate as is common with other architectures, e.g. IBM), but it is unclear to the author which particular single qubit gates are in the native gate set. (This statement is made based off of experiments compiling arbitrary gates into Foxtail/Bristlecone. See Section III.D below.) For reference, the Controlled-$Z$ gate has the following matrix representation:
+\begin{equation}
+C(Z) = \left[ \begin{matrix} 
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & -1 \\
+\end{matrix} \right] .
+\end{equation}
+</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>It should be noted that Cirq provides built-in functionality to convert its circuits to OpenQASM code:</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;Generate and print out the OpenQASM code for the random number generator circuit.&quot;&quot;&quot;</span>
@@ -12362,9 +12380,9 @@ This functionality makes it very simple to run algorithms generated in Cirq on I
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p style="text-align: justify;"> 
-Although access to Google's quantum computers is currently restricted, Cirq provides two quantum computer simulators, the `Simulator` and the `XmonSimulator`, to locally execute quantum algorithms. The `Simulator` works for generic gates that implement their unitary matrix. The `XmonSimulator` is specialized for the native gate set of Google's quantum computers and can use multi-threading to improve performance in certain cases.
+Although access to Google's quantum computers is currently restricted, Cirq provides two quantum computer simulators, the `Simulator` and the `XmonSimulator`, to locally execute quantum algorithms. The `Simulator` works for generic gates that implement their unitary matrix. The `XmonSimulator` is specialized for the native gate set of Google's quantum computers and can utilize multi-threading to improve performance in certain cases.
 </p><p style="text-align: justify;"> 
-To simulate the random bit generator circuit above with the `Simulator`, we can do the following:
+To run the random bit generator circuit above with the `Simulator`, we can do the following:
 </p>
 </div>
 </div>
@@ -12400,7 +12418,7 @@ To simulate the random bit generator circuit above with the `Simulator`, we can 
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Counter({1: 25, 0: 25})
+<pre>Counter({0: 27, 1: 23})
 </pre>
 </div>
 </div>
@@ -12414,7 +12432,7 @@ To simulate the random bit generator circuit above with the `Simulator`, we can 
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p style="text-align: justify;"> 
-The output is returned as a `Counter` object (Python built-in in the `collections` library) that displays key-value pairs corresponding to the output and number of times that output was recored. Cirq also provides the function `plot_state_histogram` to visualize the output distribution:
+The output is returned as a `Counter` object (Python built-in in the `collections` library) that displays key-value pairs corresponding to the output and number of times that output was recorded. Cirq also provides the function `plot_state_histogram` to visualize the output distribution:
 </p>
 </div>
 </div>
@@ -12445,7 +12463,7 @@ The output is returned as a `Counter` object (Python built-in in the `collection
 
 
 <div class="output_png output_subarea ">
-<img src="data:image/png;base64,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
+<img src="data:image/png;base64,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
 "
 >
 </div>
@@ -12458,7 +12476,7 @@ The output is returned as a `Counter` object (Python built-in in the `collection
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>counts = [25. 25.]
+<pre>counts = [27. 23.]
 </pre>
 </div>
 </div>
@@ -12472,9 +12490,9 @@ The output is returned as a `Counter` object (Python built-in in the `collection
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p style="text-align: justify;"> 
-For such a simple quantum algorithm, any quantum computer simulator is essentially equivalent. However, as algorithms scale to larger numbers of qubits and larger numbers of gates, runtime of the simulator can become important. The best current methods for classically simulating quantum circuits peak at around 50 qubits due to memory requirements. For a fixed number of qubits, better simulators can simulate circuits with lower overall runtime, a desirable feature for many applications. 
+For such a simple quantum algorithm, any quantum computer simulator is essentially equivalent. However, as algorithms scale to larger numbers of qubits and larger numbers of gates, runtime of the simulator can become important. The best current methods for classically simulating quantum circuits peak somewhere around 50 qubits due to memory requirements. (Note that this is the memory limitations of the world's best supercomputers.) For a fixed number of qubits, better simulators can simulate circuits with lower overall runtime, a desirable feature for many applications. 
 </p><p style="text-align: justify;"> 
-Below we test the performance of Cirq's `XmonSimulator` along these lines. Additionally, we discuss other important capabilities of quantum computer simulators such as noise modeling.
+Below we test the performance of Cirq's simulators along these lines. After, we discuss other important capabilities of quantum computer simulators such as noise modeling.
 </p>
 </div>
 </div>
@@ -12492,9 +12510,9 @@ Below we test the performance of Cirq's `XmonSimulator` along these lines. Addit
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p style="text-align: justify;"> 
-Here we test the performance of Cirq's `XmonSimulator` using random quantum circuits with different numbers of qubits and total depth. The particular form of the circuit we will consider consists of random single qubit rotations on all qubits, then a layer of entangling CNOT gates with one qubit randomly selected as the control. We define the layer of single qubit rotations plus the layer of entangling CNOTs to have a depth of one. (A circuit diagram is shown below in the article.)
+Here we test the performance of Cirq's simulators using random quantum circuits with different numbers of qubits and total depth. The particular form of the circuit we will consider consists of random single qubit rotations on all qubits, then a layer of entangling CNOT gates with one qubit randomly selected as the control. We define the layer of single qubit rotations plus the layer of entangling CNOTs to have a depth of one. (A circuit diagram is shown below in the article.)
 </p><p style="text-align: justify;"> 
-The code for testing the simulator is contained in a separate Python file called `sim_test.py`. Within this file is a function, also called `sim_test`, which inputs the number of qubits, depth of the circuit, and number of times to run the circuit (also called _shots_ or _repetitions_). This function creates a random circuit of the form described above, runs it for the desired number of times, then returns the wall clock time for how long it took. An example of using this function is shown in the code cell below.
+The code for testing the simulator is contained in a separate Python file called `cirq_code.py`. Within this file is a function called `sim_test` which inputs the number of qubits, depth of the circuit, number of times to run the circuit (also called _shots_ or _repetitions_), and which simulator in Cirq to use. This function creates a random circuit of the form described above, runs it for the desired number of times, then returns the wall clock time for how long it took. An example of using this function is shown in the code cell below.
 </p>
 </div>
 </div>
@@ -12504,7 +12522,7 @@ The code for testing the simulator is contained in a separate Python file called
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;Simulator performance test for small circuit. Note circuit structure will be random.&quot;&quot;&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;Simulator performance test for a small circuit. Note that the circuit structure will be random.&quot;&quot;&quot;</span>
 <span class="c1"># import the simulator test function</span>
 <span class="kn">from</span> <span class="nn">cirq_code</span> <span class="k">import</span> <span class="n">sim_test</span>
 
@@ -12512,7 +12530,7 @@ The code for testing the simulator is contained in a separate Python file called
 <span class="n">nqubits</span> <span class="o">=</span> <span class="mi">4</span>         <span class="c1"># number of qubits</span>
 <span class="n">depth</span> <span class="o">=</span> <span class="mi">1</span>           <span class="c1"># depth of circuit</span>
 <span class="n">nreps</span> <span class="o">=</span> <span class="mi">1</span>           <span class="c1"># number of repetitions</span>
-<span class="n">verbose</span><span class="o">=</span><span class="kc">True</span>        <span class="c1"># verbose output (prints circuit)</span>
+<span class="n">verbose</span> <span class="o">=</span> <span class="kc">True</span>      <span class="c1"># verbose output (prints circuit)</span>
 <span class="n">sim_type</span> <span class="o">=</span> <span class="mi">0</span>        <span class="c1"># 0 &lt;==&gt; XmonSimulator, 1 &lt;==&gt; Simulator</span>
 
 <span class="c1"># do the timing test</span>
@@ -12537,15 +12555,15 @@ The code for testing the simulator is contained in a separate Python file called
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Circuit structure shown below:
-0: ───Rx(0.562π)───Ry(0.783π)───Rz(0.2π)─────X───────M───────
+0: ───Rx(1.108π)───Ry(0.38π)────Rz(0.312π)───X───────M───────
                                              │
-1: ───Rx(1.212π)───Ry(0.904π)───Rz(0.53π)────┼───X───M───────
-                                             │   │
-2: ───Rx(1.64π)────Ry(1.155π)───Rz(0.405π)───┼───┼───X───M───
-                                             │   │   │
-3: ───Rx(1.769π)───Ry(0.107π)───Rz(0.208π)───@───@───@───M───
+1: ───Rx(1.264π)───Ry(1.675π)───Rz(1.996π)───@───@───@───M───
+                                                 │   │
+2: ───Rx(0.777π)───Ry(1.452π)───Rz(1.11π)────────X───┼───M───
+                                                     │
+3: ───Rx(0.877π)───Ry(0.828π)───Rz(0.548π)───────────X───M───
 
-It took 0.04 seconds to run the circuit above.
+It took 0.07 seconds to run the circuit above.
 </pre>
 </div>
 </div>
@@ -12558,7 +12576,7 @@ It took 0.04 seconds to run the circuit above.
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>For such a small circuit, the runtime is almost instantenous. As we scale to larger and larger circuits, however, the complexity of simulating the circuit increases. Below we up the scale to 20 qubits with a depth of 10.</p>
+<p>For such a small circuit, the runtime is almost instantaneous. As we scale to larger and larger circuits, however, the complexity of simulating the circuit increases. Below we up the scale to 20 qubits with a depth of 10.</p>
 
 </div>
 </div>
@@ -12597,7 +12615,7 @@ It took 0.04 seconds to run the circuit above.
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
-It took 39.67 seconds to run the circuit.
+It took 29.65 seconds to run the circuit.
 </pre>
 </div>
 </div>
@@ -12611,9 +12629,7 @@ It took 39.67 seconds to run the circuit.
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p style="text-align: justify;"> 
-Here the code takes noticably longer to run because the number of qubits and depth of the circuit are both larger now.
-</p><p style="text-align: justify;"> 
-For many applications, simulating large circuits quickly is an important task. We use the `sim_test` function above to test the performance of both the `Simulator` and `XmonSimulator` by sweeping over values of qubits and depth. In particular, we sweep over the qubit numbers $n = 10, 12, ..., 24$ and depths $d = 20, 40, ..., 100$ and time the simulator performance at each. The results of this study are displayed in the figure below.
+Here the code takes noticeably longer to run. For many applications, simulating large circuits quickly is an important task. We use the `sim_test` function above to test the performance of both the `Simulator` and `XmonSimulator` by sweeping over values of qubits and depth. In particular, we sweep over the qubit numbers $n = 10, 12, ..., 24$ and depths $d = 20, 40, ..., 100$ and time the simulator performance at each. The results of this study are displayed in the figure below.
 </p>
 </div>
 </div>
@@ -12632,7 +12648,7 @@ For many applications, simulating large circuits quickly is an important task. W
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p style="text-align: justify;"> 
-As can be seen, the performance of the `XmonSimulator` and `Simulator` are similar in terms of overall runtime. Depending on the computer architecture, increasing the number of threads or _shards_ could increase the performance of the `XmonSimulator`. (This is discussed below in Section 2.)
+As can be seen, the performance of the `XmonSimulator` and `Simulator` are similar in terms of overall runtime. Depending on the computer architecture, increasing the number of threads or _shards_ could increase the performance of the `XmonSimulator`. (This is discussed below in Section 2.) The maximum number of qubits that can be simulated depends on memory of the user's computer (more RAM implies larger circuits). The largest circuit the author attempted to run with the `Simulator` contained 26 qubits and a depth of 10 as defined above. This circuit finished running in just over one hour. Larger circuit instances throw `MemoryError`s on the author's computer. (For reference, on a similar circuit with a depth of 20, the state vector simulator in QISKit is able to simulate 25 qubits in 160 seconds, and the C++ simulator in ProjectQ is able to simulate 27 qubits in 504 seconds <a href="#LaR2018">[LaR2018]</a>.)
 </p><p style="text-align: justify;"> 
 The resource requirements (memory and runtime) for simulating larger circuits quickly reaches the limitations of current supercomputers. Researchers at Google are very interested in using a quantum computer to simulate some circuit that a classical computer cannot feasibly do, a feat called _quantum supremacy_. Cirq contains built-in functions for generating so-called "supremacy circuits," as can be seen below.
 </p>
@@ -12688,7 +12704,7 @@ The resource requirements (memory and runtime) for simulating larger circuits qu
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p style="text-align: justify;"> 
-(In the circuit diagram, brackets at the top/bottom are placed when operations are in the same moment but it is impossible to draw them all in the same column. In the second moment, all $T$ gates and the Controlled-$Z$ gates, which are all encompassed by the top/bottom brackets, happen simulataneously.)
+(In the circuit diagram, brackets at the top/bottom are placed when operations are in the same moment but it is impossible to draw them all in the same column. In the second moment, all $T$ gates and the Controlled-$Z$ gates, which are all encompassed by the top/bottom brackets, happen simultaneously.)
 </p><p style="text-align: justify;"> 
 As we've seen above, this small circuit using only three rows (six qubits) of Bristlecone could be easily simulated by a classical computer. However, extending the circuit to all qubits on Bristlecone generates a circuit that is extremely difficult to classically simulate. Quantum supremacy is expected to be announced within the next few years.
 </p>
@@ -12710,7 +12726,7 @@ As we've seen above, this small circuit using only three rows (six qubits) of Br
 <p style="text-align: justify;"> 
 While raw performance is an important aspect of simulators, other features such as noise capabilities and special-purpose simulators (e.g., Clifford circuit simulators) are equally if not more important. In particular, noise capabilities allow users to mimic the evolution on real quantum hardware and get better estimates of the performance of their algorithms. The software packages pyQuil and QISKit contain these features.
 </p><p style="text-align: justify;"> 
-Currently, Cirq does not contain any obvious support for noisy circuit simulation in either the `Simulator` or `XmonSimulator`. As Cirq is still in alpha testing, however, these features are likely to be implemented in future releases.
+Currently, Cirq does not contain any obvious support for noisy circuit simulation for either the `Simulator` or `XmonSimulator`. As Cirq is still in alpha testing, however, these features are likely to be implemented in future releases.
 </p><p style="text-align: justify;"> 
 For now, notable features of the simulators include multi-threading for the `XmonSimulator` and access to the wave function for both simulators. To get a simulator that uses multiple threads, we can pass an `XmonOptions` object specified with the number of threads into the `XmonSimulator`, as shown below.
 </p>
@@ -12870,7 +12886,7 @@ The reduced density matrix of the first qubit is:
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p style="text-align: justify;"> 
-In the previous section, we looked at features of the quantum computer simulators of Cirq. In this section we discuss notable features of the entire Cirq platform, including methods for manipulating, parameterizing, compiling, and scheduling circuits. Since each "full-stack" software platform has the same goal (programming a quantum computer), the features of each are what set them apart. Our coverage is not comprehensive (see the documentation for all features) but consists of features we find particularly notable or useful.
+In the previous section, we looked at features of the quantum computer simulators of Cirq. In this section we discuss notable features of the entire Cirq platform, including methods for manipulating, parameterizing, optimizing, and compiling circuits. Since each "full-stack" software platform has the same goal (programming a quantum computer), the features of each are what set them apart. Our coverage is not comprehensive (see the documentation for all features) but consists of features we find particularly notable or useful.
 </p>
 </div>
 </div>
@@ -12889,7 +12905,7 @@ In the previous section, we looked at features of the quantum computer simulator
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p style="text-align: justify;"> 
-As suggested by the name, the main utility of Cirq is working with and manipulating quantum ciruicts. By "manipulating quantum circuits," we mean operations of the following form:
+As suggested by the name, the main utility of Cirq is working with and manipulating quantum circuits. By "manipulating quantum circuits," we mean operations of the following form:
 </p><ul>
 <li>Creating quantum circuits.</li>
 <li>Performing arithmetic with circuits.</li>
@@ -12905,7 +12921,7 @@ In order to demonstrate these operations, we'll first import a function for crea
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;Get a function for creating circuits with random one-qubit gates.&quot;&quot;&quot;</span>
@@ -12930,15 +12946,15 @@ In order to demonstrate these operations, we'll first import a function for crea
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>0: ───X^0.5───X^0.5───X───────X───────Y───────
+<pre>0: ───X───X^0.5───X───H───────T───
 
-1: ───X^0.5───T───────X^0.5───Z───────Y───────
+1: ───Z───H───────Z───H───────Z───
 
-2: ───T───────Y───────T───────T───────Y───────
+2: ───T───Z───────Z───Z───────T───
 
-3: ───H───────H───────Z───────Z───────X^0.5───
+3: ───H───T───────Z───X^0.5───T───
 
-4: ───X───────T───────Y───────X^0.5───Y───────
+4: ───T───Y───────Z───X^0.5───X───
 </pre>
 </div>
 </div>
@@ -12958,7 +12974,7 @@ In order to demonstrate these operations, we'll first import a function for crea
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;Print out each moment in the circuit.&quot;&quot;&quot;</span>
@@ -12980,11 +12996,11 @@ In order to demonstrate these operations, we'll first import a function for crea
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>X**0.5(0) and X**0.5(1) and T(2) and H(3) and X(4)
-X**0.5(0) and T(1) and Y(2) and H(3) and T(4)
-X(0) and X**0.5(1) and T(2) and Z(3) and Y(4)
-X(0) and Z(1) and T(2) and Z(3) and X**0.5(4)
-Y(0) and Y(1) and Y(2) and X**0.5(3) and Y(4)
+<pre>X(0) and Z(1) and T(2) and H(3) and T(4)
+X**0.5(0) and H(1) and Z(2) and T(3) and Y(4)
+X(0) and Z(1) and Z(2) and Z(3) and Z(4)
+H(0) and H(1) and Z(2) and X**0.5(3) and X**0.5(4)
+T(0) and Z(1) and T(2) and T(3) and X(4)
 </pre>
 </div>
 </div>
@@ -12997,7 +13013,7 @@ Y(0) and Y(1) and Y(2) and X**0.5(3) and Y(4)
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This output tells us exactly what we see in the circuit diagram above as we move from left to right in the algorithm.</p>
+<p>This output tells us exactly what we see in the circuit diagram above as we move from left to right in the circuit.</p>
 
 </div>
 </div>
@@ -13007,7 +13023,7 @@ Y(0) and Y(1) and Y(2) and X**0.5(3) and Y(4)
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p style="text-align: justify;"> 
-Arithmetic can be performed on circuits in a natural way. For example, the sum of two circuits is a circuit consisting of all moments of the first circuit then all moments from the second circuit. Circuits multiplication is repeated addition. While simple, these operations are very useful when designing circuits, especially variational circuits. (Note that pyQuil and QISKit also have circuit arithmetic.) In this case, one circuit can be dedicated to, say, state preparation, while the other contains the variational ansatz. The circuit to be executed then consists of the sum of the two.
+Arithmetic can be performed on circuits in a natural way. For example, the sum of two circuits is a circuit consisting of all moments from the first circuit then all moments from the second circuit. Circuit multiplication is repeated addition of the same circuit. While simple, these operations are very useful when designing circuits, especially variational circuits. (Note that pyQuil and QISKit also have circuit arithmetic.) In this case, one circuit can be dedicated to, say, state preparation, while the other contains the variational ansatz. The circuit to be executed then consists of the sum of the two.
 </p><p style="text-align: justify;"> 
 In many other cases with variational algorithms, it is desirable to remove specific gates from a circuit. Cirq provides a simple built-in method to perform this task, demonstrated below.
 </p>
@@ -13016,7 +13032,7 @@ In many other cases with variational algorithms, it is desirable to remove speci
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;Clear operations from a circuit.&quot;&quot;&quot;</span>
@@ -13038,15 +13054,15 @@ In many other cases with variational algorithms, it is desirable to remove speci
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>0: ───X^0.5───X^0.5───X───X───────Y───────
+<pre>0: ───X───X^0.5───X───H───────T───
 
-1: ───X^0.5───────────────────────Y───────
+1: ───Z───────────────────────Z───
 
-2: ───T───────────────────────────Y───────
+2: ───T───────────────────────T───
 
-3: ───H───────────────────────────X^0.5───
+3: ───H───────────────────────T───
 
-4: ───X───────T───────Y───X^0.5───Y───────
+4: ───T───Y───────Z───X^0.5───X───
 </pre>
 </div>
 </div>
@@ -13067,7 +13083,7 @@ In the same manner, Cirq contains methods for inserting operations into a circui
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;Insert operations into a circuit at specific locations.&quot;&quot;&quot;</span>
@@ -13090,15 +13106,15 @@ In the same manner, Cirq contains methods for inserting operations into a circui
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>0: ───X^0.5───X^0.5───X───X───────Y───────
+<pre>0: ───X───X^0.5───X───H───────T───
 
-1: ───X^0.5───────────@───────────Y───────
-                      │
-2: ───T───────@───────┼───────────Y───────
-              │       │
-3: ───H───────@───────X───────────X^0.5───
+1: ───Z───────────@───────────Z───
+                  │
+2: ───T───@───────┼───────────T───
+          │       │
+3: ───H───@───────X───────────T───
 
-4: ───X───────T───────Y───X^0.5───Y───────
+4: ───T───Y───────Z───X^0.5───X───
 </pre>
 </div>
 </div>
@@ -13112,7 +13128,9 @@ In the same manner, Cirq contains methods for inserting operations into a circui
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p style="text-align: justify;"> 
-Here we have inserted two-qubit gates (for clarity) into the region in which we previously moved gates. As mentioned, operations of this form are particularly useful for programming variational quantum algorithms. A full set of circuit methods returning information about the circuit or modifying the circuit in place can be found in the documentation.
+Here we have inserted two-qubit gates (for clarity) into the region in which we previously removed gates. Although these abilities may appear to be contrived, operations of this form are particularly useful for programming variational quantum algorithms.
+</p><p style="text-align: justify;"> 
+In addition to manipulating quantum circuits, there are many methods built in to circuits that return useful information. Among these are `all_operations`, `all_qubits`, and `next_moment_operating_on` (also `prev_moment_operating_on`). A full set of circuit methods returning information about the circuit or modifying the circuit in place can be found in the documentation. Lastly, we remark that a circuit can be turned into a unitary matrix by using the method `to_unitary_matrix`.
 </p>
 </div>
 </div>
@@ -13130,20 +13148,20 @@ Here we have inserted two-qubit gates (for clarity) into the region in which we 
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p style="text-align: justify;"> 
-Because of Cirq's strong support for variational quantum algorithms (in which parameters/angles of an algorithm are iteratively changed to minimize an energy or cost function), the library provdies useful features for working with these types of circuits. In particular, two components are particularly notable for this task: `Symbol`s and simulating/running "sweeps" of circuits, which we now elaborate on.
+Because of Cirq's strong support for variational quantum algorithms (in which parameters/angles of an algorithm are iteratively changed to minimize an energy or cost function), the platform provides useful features for working with these types of circuits. In particular, two components are particularly notable for this task: `Symbol`s and simulating/running "sweeps" of circuits, which we now elaborate on.
 </p><p style="text-align: justify;"> 
-Rather than having to create a new quantum circuit for every new set of variables, Cirq allows gates with parmaeters to have `Symbol`s, which can be resolved by a `ParamResolver` with a given set of angles. In addition to cleaning up code, this decreases overall runtime of programs by again avoiding the task of creating a new quantum circuit for every given set of angles. An example of creating a circuit with `Symbol`s is shown below.
+Rather than having to create a new quantum circuit for every new set of variables, Cirq allows gates with parameters to have `Symbol`s, which can be resolved by a `ParamResolver` with a given set of angles. In addition to cleaning up code, this decreases overall runtime of programs by avoiding the task of creating a new quantum circuit for every given set of angles. An example of creating a circuit with `Symbol`s is shown below.
 </p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;Create a circuit that contains a symbol.&quot;&quot;&quot;</span>
-<span class="c1"># get a circuit and some qubits</span>
+<span class="c1"># get a circuit and a qubit</span>
 <span class="n">circ</span> <span class="o">=</span> <span class="n">cirq</span><span class="o">.</span><span class="n">Circuit</span><span class="p">()</span>
 <span class="n">qbit</span> <span class="o">=</span> <span class="n">cirq</span><span class="o">.</span><span class="n">LineQubit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
@@ -13197,7 +13215,7 @@ When we print out the circuit diagram, we see that we have one gate with a defin
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;Run a parameterized circuit by resolving the circuit with a ParamResolver.&quot;&quot;&quot;</span>
@@ -13227,7 +13245,7 @@ When we print out the circuit diagram, we see that we have one gate with a defin
 
 
 <div class="output_png output_subarea ">
-<img src="data:image/png;base64,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
+<img src="data:image/png;base64,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
 "
 >
 </div>
@@ -13250,12 +13268,12 @@ With this method, we only have to change the value of the `ParamResolver` to cha
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;Sweep over a set of values to run a parameterized circuit at.&quot;&quot;&quot;</span>
 <span class="c1"># get a &quot;sweep&quot; of values</span>
-<span class="n">sweep</span> <span class="o">=</span> <span class="n">cirq</span><span class="o">.</span><span class="n">Linspace</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">sym</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">sweep</span> <span class="o">=</span> <span class="n">cirq</span><span class="o">.</span><span class="n">Linspace</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">sym</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
 
 <span class="c1"># run the circuit at all values in the sweep</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">simulator</span><span class="o">.</span><span class="n">run_sweep</span><span class="p">(</span><span class="n">circ</span><span class="p">,</span> <span class="n">sweep</span><span class="p">,</span> <span class="n">repetitions</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
@@ -13285,7 +13303,7 @@ With this method, we only have to change the value of the `ParamResolver` to cha
 
 
 <div class="output_png output_subarea ">
-<img src="data:image/png;base64,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
+<img src="data:image/png;base64,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
 "
 >
 </div>
@@ -13309,16 +13327,16 @@ With this method, we only have to change the value of the `ParamResolver` to cha
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p style="text-align: justify;"> 
-<i>Quantum compiling</i> consists of rewriting a given algorithm in terms of gates a quantum computer can actually implement (a <i>native gate set</i> or simply <i>gate set</i>). A similar problem is that of <i>quantum circuit optimization</i>, by which we mean rewriting a quantum circuit to contain as few gates as possible. Practical considerations always require a gate set to be specified, but in many situations it is desirable to simplify a circuit inasmuch as possible. For example, we would never implement two Pauli operations ($X$, $Y$, $Z$) in sequence because they square to the identity. Similar ideas apply to other gates.
+<i>Quantum compiling</i> consists of rewriting a given algorithm in terms of gates a quantum computer can actually implement (a <i>native gate set</i> or simply <i>gate set</i>). Cirq has functionality to create a circuit for a particular `Device` (see <i>Devices and Schedules</i> below) and automatically compile gates into the native gate set. A similar problem is that of <i>quantum circuit optimization</i>, by which we mean rewriting a quantum circuit to contain as few gates as possible. For example, we would never implement two Pauli operations ($X$, $Y$, $Z$) in sequence because they square to the identity. Similar ideas apply to other gates. This task is critical for NISQ hardware as errors accumulate through gate application and decoherence throughout the algorithm. 
 </p><p style="text-align: justify;"> 
-Cirq provides several utilities for quantum circuit optimization, which we demonstrate below. First, we obtain a random circuit consisting of only single qubit gates for simplicity.
+Cirq provides several utilities for quantum circuit optimization, which we demonstrate below without specification to a native gate set. (The exact same functionality works for circuits tied to a `Device`.) First, we obtain a random circuit consisting of only single qubit gates for simplicity.
 </p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;Get a random circuit.&quot;&quot;&quot;</span>
@@ -13341,13 +13359,13 @@ Cirq provides several utilities for quantum circuit optimization, which we demon
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>0: ───X^0.5───H───────H───────H───X^0.5───
+<pre>0: ───X───────Y───────Z───H───────H───
 
-1: ───Z───────Z───────Z───────H───H───────
+1: ───X^0.5───X^0.5───H───X^0.5───Z───
 
-2: ───H───────Z───────X^0.5───Z───Z───────
+2: ───H───────T───────H───X^0.5───Y───
 
-3: ───T───────X^0.5───T───────Y───X^0.5───
+3: ───X^0.5───X───────Y───T───────Z───
 </pre>
 </div>
 </div>
@@ -13368,7 +13386,7 @@ The random circuit we obtained is shown above. The first optimization pass we wi
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;Push Z gates toward the end of the circuit.&quot;&quot;&quot;</span>
@@ -13391,13 +13409,13 @@ The random circuit we obtained is shown above. The first optimization pass we wi
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>0: ───X^0.5───H────────────────────H────────H───X^0.5────────
+<pre>0: ───X───────Y───────Z───H─────────H───
 
-1: ────────────────────────────────Z────────H───H────────────
+1: ───X^0.5───X^0.5───H───X^0.5─────Z───
 
-2: ───H────────────────────────────X^-0.5───Z────────────────
+2: ───H───────T───────H───X^0.5─────Y───
 
-3: ───────────PhasedX(-0.25)^0.5────────────X───Y^-0.5───S───
+3: ───X^0.5───X───────Y───Z^-0.75───────
 </pre>
 </div>
 </div>
@@ -13411,14 +13429,14 @@ The random circuit we obtained is shown above. The first optimization pass we wi
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p style="text-align: justify;"> 
-As we can see, all $Z$ operations now appear at the right-most portion of the circuit. Next we will perform a similar optimization pass, this time attempting to push $X$, $Y$, and `PhasedXPow` gates to the right.
+As we can see, all $Z$ operations now appear at the right-most portion of the circuit. Next we will perform a similar optimization pass, this time attempting to push $X$, $Y$, and `PhasedXPowGate`s to the right.
 </p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;Push X, Y, and PhasedXPow gates toward the end of the circuit.&quot;&quot;&quot;</span>
@@ -13442,13 +13460,13 @@ As we can see, all $Z$ operations now appear at the right-most portion of the ci
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>0: ───X^0.5───H────────────────────H────────H───X^0.5───────────────────
+<pre>0: ───────────Z───────Z───H─────────H───
 
-1: ────────────────────────────────Z────────H───H───────────────────────
+1: ───X^0.5───X^0.5───H───X^0.5─────Z───
 
-2: ───H────────────────────────────X^-0.5───Z───────────────────────────
+2: ───H───────T───────H───X^0.5─────Y───
 
-3: ───────────PhasedX(-0.25)^0.5────────────────Y^0.5───PhasedX(0.25)───
+3: ───X^0.5───────────Z───Z^-0.75───────
 </pre>
 </div>
 </div>
@@ -13469,7 +13487,7 @@ Another circuit optimization provided by Cirq is merging all single qubit gates 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;Merge single qubit gates into PhasedX and PhasedZ gates.&quot;&quot;&quot;</span>
@@ -13492,13 +13510,11 @@ Another circuit optimization provided by Cirq is merging all single qubit gates 
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>0: ───S^-1──────────────────────────────
+<pre>1: ───X^0.5─────S───
 
-1: ─────────────────────────────────Z───
+2: ───X^-0.25───Z───
 
-2: ───X^0.5───S^-1──────────────────────
-
-3: ───────────PhasedX(-0.75)^0.75───T───
+3: ───X^0.5─────T───
 </pre>
 </div>
 </div>
@@ -13519,7 +13535,7 @@ We see that the entire circuit is now expressed in terms of these gates. As a la
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;Removes operations with a tiny effect and drop empty moments in the circuit.&quot;&quot;&quot;</span>
@@ -13548,13 +13564,11 @@ We see that the entire circuit is now expressed in terms of these gates. As a la
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>0: ───S^-1──────────────────────────────
+<pre>1: ───X^0.5─────S───
 
-1: ─────────────────────────────────Z───
+2: ───X^-0.25───Z───
 
-2: ───X^0.5───S^-1──────────────────────
-
-3: ───────────PhasedX(-0.75)^0.75───T───
+3: ───X^0.5─────T───
 </pre>
 </div>
 </div>
@@ -13575,7 +13589,7 @@ Cirq also allows single qubit gates to be merged into arbitrary two by two unita
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;Merge single qubit gates.&quot;&quot;&quot;</span>
@@ -13599,25 +13613,20 @@ Cirq also allows single qubit gates to be merged into arbitrary two by two unita
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>0: ───┌             ┐─────────────────────────────────────────────────────────────
-      │1.+0.j 0.+0.j│
-      │0.+0.j 0.-1.j│
-      └             ┘
-
-1: ───────────────────────────────────────────────────────────┌               ┐───
-                                                              │ 1.+0.j  0.+0.j│
-                                                              │ 0.+0.j -1.+0.j│
-                                                              └               ┘
-
-2: ───┌                   ┐───────────────────────────────────────────────────────
+<pre>1: ───┌                   ┐───────────
       │ 0.5+0.5j  0.5-0.5j│
-      │-0.5-0.5j  0.5-0.5j│
+      │ 0.5+0.5j -0.5+0.5j│
       └                   ┘
 
-3: ───────────────────────────┌                           ┐───────────────────────
-                              │ 0.146+0.354j -0.354+0.854j│
-                              │-0.354-0.854j -0.146+0.354j│
-                              └                           ┘
+2: ───┌                           ┐───
+      │ 0.854-0.354j  0.146+0.354j│
+      │-0.146-0.354j -0.854+0.354j│
+      └                           ┘
+
+3: ───┌                         ┐─────
+      │0.5  +0.5j   0.5  -0.5j  │
+      │0.707-0.j    0.   +0.707j│
+      └                         ┘
 </pre>
 </div>
 </div>
@@ -13638,10 +13647,10 @@ We note that optimized circuits can be run/simulated with either the `Simulator`
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;Run the optimized circuit and display it&#39;s wavefunction in Dirac notation.&quot;&quot;&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;Run the optimized circuit and display its wavefunction in Dirac notation.&quot;&quot;&quot;</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">simulator</span><span class="o">.</span><span class="n">simulate</span><span class="p">(</span><span class="n">circ</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">dirac_notation</span><span class="p">())</span>
 </pre></div>
@@ -13660,7 +13669,7 @@ We note that optimized circuits can be run/simulated with either the `Simulator`
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(-0.25+0.1j)|0000⟩ + (0.6-0.25j)|0001⟩ + (0.25-0.1j)|0010⟩ + (-0.6+0.25j)|0011⟩
+<pre>(0.43+0.18j)|000⟩ + (0.43-0.18j)|001⟩ + (0.07-0.18j)|010⟩ + (-0.07-0.18j)|011⟩ + (0.43+0.18j)|100⟩ + (0.43-0.18j)|101⟩ + (0.07-0.18j)|110⟩ + (-0.07-0.18j)|111⟩
 </pre>
 </div>
 </div>
@@ -13674,7 +13683,7 @@ We note that optimized circuits can be run/simulated with either the `Simulator`
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p style="text-align: justify;">
-The Dirac notation of the wavefunction above corresponds to the same wavefunction we would have obtained by simulating the original circuit. Here, we acheived the same effect with much fewer gates.
+The Dirac notation of the wavefunction above corresponds to the same wavefunction we would have obtained by simulating the original circuit. Here, we achieved the same effect with much fewer gates.
 </p><p style="text-align: justify;">
 Of course, a given quantum computer cannot implement arbitrary gates like the simulator has done above. As mentioned, these gates need to be compiled into operations the computer can implement. Cirq provides this functionality with a `Device`, as we elaborate on below.
 </p>
@@ -13696,14 +13705,14 @@ Of course, a given quantum computer cannot implement arbitrary gates like the si
 <p style="text-align: justify;">
 The existence of `Device`s and `Schedule`s again reflects Cirq's emphasis on near-term quantum computing. Briefly, a `Device` corresponds to a quantum computer with given constraints such as qubit connectivity and native gate sets. A `Schedule` corresponds to the real-time implementation of operations on a `Device`. Users have full control to specify any quantum computer architecture using a `Device` and can program a circuit for any given quantum computer. Because the documentation contains detailed information on user-defined devices and schedules, we omit this discussion here. Instead, we provide information on `Device`s by analyzing one that is already defined in Cirq. Namely, the Foxtail quantum computer.
 </p><p style="text-align: justify;">
-In the following code, we create a quantum circuit with it's device set as Foxtail:
+In the following code, we create a quantum circuit with its device set as Foxtail:
 </p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[99]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;Make a quantum circuit whose device is the 22 qubit Foxtail quantum computer.&quot;&quot;&quot;</span>
@@ -13727,24 +13736,24 @@ In the following code, we create a quantum circuit with it's device set as Foxta
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p style="text-align: justify;">
-Once we grab the `Foxtail` device, we can get it's qubits and then create a circuit. We can use the method `decompose_operation` of a `Device` to compile/decompose a gate operation. Below we show this for the example of the Hadmard gate.
+Once we grab the `Foxtail` device, we can get its qubits and then create a circuit. We can use the method `decompose_operation` of a `Device` to compile/decompose a gate operation. Below we show this for the example of the Hadamard gate.
 </p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[100]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;Compile/decompose operations into the native gate set of Foxtail.&quot;&quot;&quot;</span>
-<span class="c1"># get the hadmard gate</span>
+<span class="c1"># get the hadamard gate</span>
 <span class="n">hgate</span> <span class="o">=</span> <span class="n">cirq</span><span class="o">.</span><span class="n">H</span><span class="p">(</span><span class="n">qbits</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 
 <span class="c1"># compile/decompose the gate into native operations</span>
 <span class="n">compiled_hgate</span> <span class="o">=</span> <span class="n">foxtail</span><span class="o">.</span><span class="n">decompose_operation</span><span class="p">(</span><span class="n">hgate</span><span class="p">)</span>
 
-<span class="c1"># print out the gate and it&#39;s compilation</span>
+<span class="c1"># print out the gate and its compilation</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">hgate</span><span class="p">,</span> <span class="s2">&quot;=&quot;</span><span class="p">,</span> <span class="n">compiled_hgate</span><span class="p">)</span>
 </pre></div>
 
@@ -13783,7 +13792,7 @@ Once we have compiled gates, we can append them into the circuit. Alternatively,
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[102]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;Adding operations to a circuit with a device compiles them automatically.&quot;&quot;&quot;</span>
@@ -13811,9 +13820,9 @@ Once we have compiled gates, we can append them into the circuit. Alternatively,
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(0, 0): ───Y^-0.5───Z───────────────────@──────────────────────Y^-0.5───Z───────────────────@──────────────────────
-                                        │                                                   │
-(0, 1): ────────────PhasedX(-0.5)^0.5───@───PhasedX(0.5)^0.5────────────PhasedX(-0.5)^0.5───@───PhasedX(0.5)^0.5───
+<pre>(0, 0): ───Y^-0.5───Z───────────────────@──────────────────────
+                                        │
+(0, 1): ────────────PhasedX(-0.5)^0.5───@───PhasedX(0.5)^0.5───
 </pre>
 </div>
 </div>
@@ -13824,11 +13833,11 @@ Once we have compiled gates, we can append them into the circuit. Alternatively,
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[104]:</div>
+<div class="prompt input_prompt">In&nbsp;[75]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;Attempt to optimize the circuit. Only commutes Z across CZ for a single Bell state preparation circuit, </span>
-<span class="sd">simplifies two sequential Bell state preparation circuits.</span>
+<span class="sd">simplifies two sequential Bell state preparation circuits. (Run the cell above twice to see this.)</span>
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="n">ejectZ</span><span class="o">.</span><span class="n">optimize_circuit</span><span class="p">(</span><span class="n">circ</span><span class="p">)</span>
 <span class="n">ejectPaulis</span><span class="o">.</span><span class="n">optimize_circuit</span><span class="p">(</span><span class="n">circ</span><span class="p">)</span>
@@ -13852,9 +13861,9 @@ Once we have compiled gates, we can append them into the circuit. Alternatively,
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>(0, 0): ───Y^-0.5───────────────────────@───Y^0.5───@──────────────────────
-                                        │           │
-(0, 1): ────────────PhasedX(-0.5)^0.5───@───────────@───PhasedX(0.5)^0.5───
+<pre>0: ───Y^-0.5───Z───PhasedX(-0.5)^t───Z───X───M(&#39;z&#39;)───
+                                         │
+1: ───Y^-0.5───Z───PhasedX(-0.5)^t───Z───@────────────
 </pre>
 </div>
 </div>
@@ -13875,7 +13884,7 @@ Here we can see the native operations of Foxtail (which are the same for Bristle
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[105]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;See how long each native operation takes to implement.&quot;&quot;&quot;</span>
@@ -13920,7 +13929,7 @@ CZ time = 50.0 nanoseconds.
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p style="text-align: justify;">
-Here we see that the single qubit gate $Y$ takes 20 nanoseconds to implement (on any qubit), and the two-qubit gate Controlled-$Z$ takes over twice as long to implement at 50 nanoseconds. The $Z$ gate takes no time to implement because it is a "virtual" gate. That is, it is implemented by shifting the clock of the software keeping track of the qubit and not implementing any physical operation like the $Y$ or Controlled-$Z$ gate.
+Here we see that the single qubit gate $Y$ takes 20 nanoseconds to implement (on any qubit), and the two-qubit gate Controlled-$Z$ takes over twice as long to implement at 50 nanoseconds. The $Z$ gate takes no time to implement because it is a "virtual" gate. That is, it is implemented by shifting the clock of the software keeping track of the qubit and not by any physical operation acting on the qubit like the $Y$ or Controlled-$Z$ gate.
 </p>
 </div>
 </div>
@@ -13938,7 +13947,7 @@ Here we see that the single qubit gate $Y$ takes 20 nanoseconds to implement (on
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p style="text-align: justify;">
-To conlcude this section, we briefly mention other notable features of Cirq. 
+To conclude this section, we briefly mention other notable features of Cirq. 
 </p><p style="text-align: justify;">
 In terms of library support, which we define to mean any built-in algorithms or examples demonstrating how to implement algorithms, several companies have used Cirq in collaboration with Google for various projects. For example, <a href="https://zapatacomputing.com/">Zapata Computing</a> used Cirq to implement a quantum autoencoder, <a href="https://qcware.com/press/20180718">QC Ware</a> used Cirq for implementing QAOA, and <a href="https://heisenberg.xyz/news/2018/07/heisenberg-cirq/">Heisenberg Quantum Simulations</a> used Cirq to simulate the Anderson model. The documentation of Cirq contains an in-depth <a href="https://cirq.readthedocs.io/en/stable/tutorial.html">tutorial</a> of a variational quantum algorithm, and the <a href="https://github.com/quantumlib/Cirq/tree/master/examples">examples folder on Cirq's GitHub</a> contains detailed Python scripts on Grover's algorithm, the quantum Fourier Transform, the phase estimation algorithm, the Bernstein-Vazirani algorithm, and an example preparing BCS ground states for superconductors/superfluids.
 </p><p style="text-align: justify;">
@@ -13986,7 +13995,7 @@ For consistency with our comparison of pyQuil, QISKit, ProjectQ, and the Quantum
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[113]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;Quantum teleportation algorithm written in Cirq.&quot;&quot;&quot;</span>
@@ -14050,14 +14059,14 @@ To the author's knowledge, there does not exist an easy way to perform classical
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[114]:</div>
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;Verify the state of the third qubit is |1&gt; using the simulate methods.&quot;&quot;&quot;</span>
 <span class="c1"># simulate the circuit with access to the wavefunction</span>
 <span class="n">res</span> <span class="o">=</span> <span class="n">simulator</span><span class="o">.</span><span class="n">simulate</span><span class="p">(</span><span class="n">circ</span><span class="p">)</span>
 
-<span class="c1"># print out the densitry matrix, which should be</span>
+<span class="c1"># print out the density matrix, which should be</span>
 <span class="c1"># [[0, 0],</span>
 <span class="c1">#  [0, 1]]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">density_matrix</span><span class="p">([</span><span class="mi">2</span><span class="p">]))</span>
@@ -14105,9 +14114,21 @@ To within floating point precision, this is exactly the density matrix we expect
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p style="text-align: justify;"> 
+We now show an example of a variational quantum-classical algorithm using Cirq. The algorithm shown, called Variational Quantum State Diagonalization (VQSD), is used to diagonalize a quantum state (more generally, a positive semidefinite matrix) and was introduced in <a href="#La2018">[La2018]</a>. Without going into all details in the paper, the algorithm works by taking as input two copies of a quantum state $\rho$. For our simple illustrative example, we will use a one qubit state $\rho = |+\rangle \langle +|$ which can be prepared by performing a Hadmard gate on each qubit at the start of the algorithm, $|+\rangle := H |0\rangle$. (Generally, VQSD assumes the state is prepared from some efficient process, a notable example being quantum simulation, for which VQSD can be used for entanglement spectroscopy and other condensed matter applications) Next, the algorithm implements a variational ansatz (or structure of the circuit), which we take to be $U(t) = R_z(\pi / 2) X^t R_z(\pi / 2)$ where $t$ is the only parameter. Finally, a measure of "diagonality" of the state after the ansatz circuit has been applied is computed. For our case, this amounts to a single CNOT gate and a measurement in the computational basis.
+</p><p style="text-align: justify;"> 
+In general for variational algorithms, a (classical) optimization algorithm can be used to find the best set of parameters for the ansatz. Here, we simply sweep over the parameter $t$ in our ansatz and plot the results to find the parameter that maximizes the measure of "diagonality" of $\rho' := U \rho U^\dagger$. The complete program is shown below.
+</p>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[113]:</div>
+<div class="prompt input_prompt">In&nbsp;[72]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;Implementation of the VQSD algorithm [La2018] on a simple one qubit state.&quot;&quot;&quot;</span>
@@ -14127,12 +14148,14 @@ To within floating point precision, this is exactly the density matrix we expect
 <span class="c1"># ansatz circuit</span>
 <span class="c1"># ==============</span>
 <span class="n">ansatz</span> <span class="o">=</span> <span class="n">cirq</span><span class="o">.</span><span class="n">Circuit</span><span class="p">()</span>
-<span class="n">gate</span> <span class="o">=</span> <span class="n">cirq</span><span class="o">.</span><span class="n">PhasedXPowGate</span><span class="p">(</span><span class="n">exponent</span><span class="o">=</span><span class="n">cirq</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;t0&quot;</span><span class="p">),</span> <span class="n">phase_exponent</span><span class="o">=</span><span class="n">cirq</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;t1&quot;</span><span class="p">))</span>
-<span class="n">ansatz</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">gate</span><span class="p">(</span><span class="n">qbits</span><span class="p">[</span><span class="n">x</span><span class="p">])</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)])</span>
+<span class="n">gate0</span> <span class="o">=</span> <span class="n">cirq</span><span class="o">.</span><span class="n">Rz</span><span class="p">(</span><span class="n">rads</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">gate1</span> <span class="o">=</span> <span class="n">cirq</span><span class="o">.</span><span class="n">XPowGate</span><span class="p">(</span><span class="n">exponent</span><span class="o">=</span><span class="n">cirq</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;t&quot;</span><span class="p">))</span>
+<span class="n">ansatz</span><span class="o">.</span><span class="n">append</span><span class="p">([[</span><span class="n">gate0</span><span class="p">(</span><span class="n">qbits</span><span class="p">[</span><span class="n">x</span><span class="p">]),</span> <span class="n">gate1</span><span class="p">(</span><span class="n">qbits</span><span class="p">[</span><span class="n">x</span><span class="p">]),</span> <span class="n">gate0</span><span class="p">(</span><span class="n">qbits</span><span class="p">[</span><span class="n">x</span><span class="p">])]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">)],</span>
+             <span class="n">strategy</span><span class="o">=</span><span class="n">cirq</span><span class="o">.</span><span class="n">InsertStrategy</span><span class="o">.</span><span class="n">EARLIEST</span><span class="p">)</span>
 
-<span class="c1"># =================</span>
-<span class="c1"># diag test circuit</span>
-<span class="c1"># =================</span>
+<span class="c1"># ==========================</span>
+<span class="c1"># &quot;diagonality&quot; test circuit</span>
+<span class="c1"># ==========================</span>
 <span class="n">diag</span> <span class="o">=</span> <span class="n">cirq</span><span class="o">.</span><span class="n">Circuit</span><span class="p">()</span>
 <span class="n">diag</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">cirq</span><span class="o">.</span><span class="n">CNOT</span><span class="p">(</span><span class="n">qbits</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">qbits</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">cirq</span><span class="o">.</span><span class="n">measure</span><span class="p">(</span><span class="n">qbits</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">key</span><span class="o">=</span><span class="s2">&quot;z&quot;</span><span class="p">)])</span>
 
@@ -14141,14 +14164,15 @@ To within floating point precision, this is exactly the density matrix we expect
 <span class="c1"># ================</span>
 <span class="n">circ</span> <span class="o">=</span> <span class="n">prep</span> <span class="o">+</span> <span class="n">ansatz</span> <span class="o">+</span> <span class="n">diag</span>
 
-<span class="c1"># =======================</span>
-<span class="c1"># optimize the parameters</span>
-<span class="c1"># =======================</span>
+<span class="c1"># =========================</span>
+<span class="c1"># sweep over the parameters</span>
+<span class="c1"># =========================</span>
+<span class="n">reps</span> <span class="o">=</span> <span class="mi">10000</span>
 <span class="n">simulator</span> <span class="o">=</span> <span class="n">cirq</span><span class="o">.</span><span class="n">google</span><span class="o">.</span><span class="n">XmonSimulator</span><span class="p">()</span>
-<span class="n">sweep</span> <span class="o">=</span> <span class="p">(</span><span class="n">cirq</span><span class="o">.</span><span class="n">Linspace</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s2">&quot;t0&quot;</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mi">100</span><span class="p">),</span>
-         <span class="n">cirq</span><span class="o">.</span><span class="n">Linspace</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s2">&quot;t1&quot;</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mi">100</span><span class="p">))</span>
-<span class="c1"># simulator.run_sweep(circ, sweep)</span>
+<span class="n">sweep</span> <span class="o">=</span> <span class="p">(</span><span class="n">cirq</span><span class="o">.</span><span class="n">Linspace</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s2">&quot;t&quot;</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="mi">100</span><span class="p">))</span>
+<span class="n">vals</span> <span class="o">=</span> <span class="n">simulator</span><span class="o">.</span><span class="n">run_sweep</span><span class="p">(</span><span class="n">circ</span><span class="p">,</span> <span class="n">sweep</span><span class="p">,</span> <span class="n">repetitions</span><span class="o">=</span><span class="n">reps</span><span class="p">)</span>
 
+<span class="c1"># print out the circuit</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">circ</span><span class="p">)</span>
 </pre></div>
 
@@ -14166,9 +14190,9 @@ To within floating point precision, this is exactly the density matrix we expect
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>0: ───H───PhasedX(t1)^t0───X───M(&#39;z&#39;)───
-                           │
-1: ───H───PhasedX(t1)^t0───@────────────
+<pre>0: ───H───Rz(0.5π)───X^t───Rz(0.5π)───X───M(&#39;z&#39;)───
+                                      │
+1: ───H───Rz(0.5π)───X^t───Rz(0.5π)───@────────────
 </pre>
 </div>
 </div>
@@ -14181,7 +14205,84 @@ To within floating point precision, this is exactly the density matrix we expect
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p style="text-align: justify;"> 
+The complete circuit for the VQSD algorithm is shown above. (Note that this can be easily simplified to contain only one qubit, but here we stick to the general formulation of the algorithm.) We now plot the "degree of diagonality" vs. the parameter $t$, which ranges from zero to one, in the plot below.
+</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[74]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># plot the degree of diagonality vs. the parameter t</span>
+<span class="n">tvals</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">sweep</span><span class="o">.</span><span class="n">param_tuples</span><span class="p">()]</span>
+<span class="n">cvals</span> <span class="o">=</span> <span class="p">[</span><span class="n">vals</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s2">&quot;z&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">reps</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">vals</span><span class="p">))]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tvals</span><span class="p">,</span> <span class="n">cvals</span><span class="p">,</span> <span class="s2">&quot;-o&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># plot style</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">();</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;t&quot;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Degree of Diagonality&quot;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Diagonalizing a one-qubit state with VQSD&quot;</span><span class="p">);</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p style="text-align: justify;"> 
+Here we can see that the state $\rho' := U(t) \rho U(t)^\dagger$ is the most diagonal at the value of $t = 1/2$. A simple classical calculation using matrix arithmetic shows that $\rho'$ is indeed diagonal in the computational basis when $t = 1/2$. 
+</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="-V.-Comparisons-and-Conclusions-"><p style="text-align: center;"> V. Comparisons and Conclusions </p><a class="anchor-link" href="#-V.-Comparisons-and-Conclusions-">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p style="text-align: justify;"> 
+In this final section we offer concluding remarks about Cirq. The purpose of this article was to introduce and analyze Cirq in a similar fashion to the paper <a href="#LaR2018">[LaR2018]</a> comparing Forest (pyQuil), QISKit, ProjectQ, and the Quantum Developer Kit (Q#). We hope at this point the reader will be able to come to his/her own conclusions about Cirq's place in the quantum software community. (Recalling again that Cirq is still alpha software.)
+</p><p style="text-align: justify;"> 
+In general, we find that Cirq is already a fantastic tool for writing, manipulating, optimizing, compiling, and simulating quantum circuits. The learning curve for Cirq is small as the language is written in Python and the syntax/organization of the code is very clean. (We do note that Cirq is written with function annotations in Python which in several cases can be rather verbose.) We expect the platform to keep improving as quantum hardware and other simulators are made available. We find the tools for working with variational quantum algorithms to be one of the best features of Cirq. (It should be noted that Forest has emphasis on this feature as well, but currently the functionality is smoother with Cirq in the author's opinion.) The integration with OpenFermion will likely lead to one of the best tools for quantum simulation algorithms. The simulators of Cirq are both great utilities though not as high-performance as the simulator in ProjectQ. Finally, we expect the quantum channel and stabilizer code features of Cirq to be interesting and useful once they are released.
+</p><p style="text-align: justify;"> 
+Probably the biggest missing feature of Cirq is the ability to simulate noisy quantum circuits, which Forest and QISKit do very well. (We expect this feature to be released in future versions.) As was seen in the quantum teleportation algorithm, the ability to implement classical operations in circuits, a feature emphasized by the Forest platform, is entirely missing in Cirq. Additionally, the documentation, tutorials, and library support of Cirq are much more sparse than Forest, QISKit, the QDK, and even ProjectQ. (Again, the alpha disclaimer is important here.) Currently, users of Cirq will not be able to connect to real quantum computers as they would with Forest, QISKit, or ProjectQ. Once Foxtail and/or Bristlecone are made available over the cloud, however, this will of course change.
+</p><p style="text-align: justify;"> 
+The addition of Cirq to the quantum software community provides excellent tools for working with circuits for near-term quantum computers, and will soon offer connectivity to some of the world's most advanced quantum computers. We hope that this article provides a fair introduction and overview of the platform. For readers who wish to explore Cirq further, we recommend the <a href="https://cirq.readthedocs.io/en/stable/api.html">API Reference of the documentation.</a>
+</p>
 </div>
 </div>
 </div>

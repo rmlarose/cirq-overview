@@ -54,7 +54,7 @@ plt.rc('figure', titlesize=MEDIUM_SIZE)  # fontsize of the figure title
 fpath = "../timing/"
 
 # simulator type
-sim = "simulator/"
+sim = "xmonsimulator/"
 
 # get all filenames
 fnames = glob(fpath + sim + "*.txt")
@@ -97,7 +97,7 @@ im = ax.imshow(log(time), origin=[0,0], cmap='summer')
 #cbar = ax.figure.colorbar(im, ax=ax)
 
 # title and labels
-plt.title('Cirq Simulator Performance', fontsize=16, fontweight='bold')
+plt.title('Cirq XmonSimulator Performance (in Seconds)', fontsize=16, fontweight='bold')
 plt.xlabel('Number of Qubits')
 plt.ylabel('Circuit Depth')
 
@@ -106,9 +106,12 @@ plt.xticks(range(NQUBITS), range(10, 24 + 1, 2))
 
 plt.yticks(range(NDEPTHS), range(20, 100 + 1, 20))
 
-# Loop over data dimensions and create text annotations.
+# loop over data dimensions and create text annotations
 for i in range(len(time)):
     for j in range(len(time[0])):
         tstr = str(time[i, j])
         text = ax.text(j, i, tstr[:5],
                        ha="center", va="center", color="k")
+
+# show the plot
+plt.show()

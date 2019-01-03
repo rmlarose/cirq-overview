@@ -11804,7 +11804,7 @@ div#notebook {
 <p style="text-align: justify;"> 
 Quantum computing is transitioning from a theoretical to practical phase. Historically, researchers have asked questions about the possibilities of speedups through black-box access to abstract, idealized quantum computers. Recently, small, imperfect quantum computers have been fabricated and made available over the cloud. A significant body of literature is emerging as researchers use these devices to solve problems in nuclear physics <a href="#Du2018">[Du2018]</a>, quantum chemistry <a href="#Pe2014">[Pe2014]</a>, condensed matter <a href="#La2018">[La2018]</a>, optimization <a href="#Fa2018">[Fa2014]</a>, number theory <a href="#An2018">[An2018]</a>, graph theory <a href="#Fa2018">[Fa2018]</a>, and even quantum computing itself <a href="#Kh2018">[Kh2018]</a>. While these problems are small and easily handled by conventional computers, the prospect of large-scale quantum computers could quickly change this. Even on current quantum computers, certain contrived problems may soon demonstrate "quantum supremacy" <a href="#Ne2017">[Ne2017, Ma2018]</a>, an exciting landmark in the history of computation. 
 </p><p style="text-align: justify;"> 
-This theoretical-to-practical progression of the field necessitates access to quantum computers that is much different from black box access on pen and paper. Many institutions in industry and academia have recognized this and began building tools for this purpose, and a slew of startup companies has emerged to fill the gaps in the transition to practical quantum computing. The following diagram represents a snapshot of this rapidly evolving landscape:
+This theoretical-to-practical progression of the field necessitates access to quantum computers that is much different from black box access on pen and paper. Many institutions in industry and academia have recognized this and began building tools for this purpose, and a slew of startup companies has emerged to fill the gaps in the transition to practical quantum computing. The following diagram shows a partial snapshot of this rapidly evolving landscape:
 </p>
 </div>
 </div>
@@ -11837,7 +11837,7 @@ For most "full-stack" quantum computing companies, access to quantum computers i
 <li>How easy is it to parametrize algorithms for near-term quantum computing?</li>
 </ol>
 <p style="text-align: justify;"> 
-Each of these considerations is important from a practical perspective. For example, an algorithm on many qubits may be better implemented on a platform with a more high-performance simulator; an algorithm with many gates may be better for a platform with higher fidelity qubits; an algorithm with many non-standard gates may be better for a platform with an optimal compiler. Other considerations such as examples, tutorials, and documentation are equally important as they help bring in new users and answer questions of experienced users.
+Each of these considerations is important from a practical perspective. For example, an algorithm on many qubits may be better implemented on a platform with a higher-performance simulator; an algorithm with many gates may be better for a platform with higher fidelity qubits; an algorithm with many non-standard gates may be better for a platform with an optimal compiler. Other considerations such as examples, tutorials, and documentation are equally important as they help bring in new users and answer questions of experienced users.
 </p><p style="text-align: justify;"> 
 For these reasons, it is both valid and important to evaluate quantum software platforms as more than the simple interface they may appear to be. To this end, the Quantum Computing Report published an article <a href="#LaR2018">[LaR2018]</a> comparing Forest by Rigetti, QISKit by IBM, ProjectQ by ETH Zurich, and the Quantum Developer Kit by Microsoft. Each platform was found to have different strengths and different emphases that determined the set of problems best-suited for the environment. The purpose of this article is to introduce and analyze Cirq in a similar fashion.
 </p><p style="text-align: justify;"> 
@@ -11998,7 +11998,7 @@ at a command line. Without leaving the notebook, executing the cell below will t
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p style="text-align: justify;"> 
-The <a href="https://cirq.readthedocs.io/en/latest/install.html">documentation for Cirq</a> contains instructions on installation for all three major operating systems, an in-depth tutorial for the variational quantum eigensolver, and details on three major components of the Cirq library: circuits, gates, and simulation. In addition, the section on _Schedules and Devices_ details how Cirq can be used with specific quantum hardware and reflects the emphasis on near-term quantum computing. The documentation also contains a detailed API reference for the entire library and development guidelines for those who may want to contribute to the source code.
+The <a href="https://cirq.readthedocs.io/en/latest/install.html">documentation for Cirq</a> contains instructions on installation for all three major operating systems, an in-depth tutorial for the variational quantum eigensolver, and details on three major components of the Cirq library: circuits, gates, and simulation. In addition, the section on <i>Schedules and Devices</i> details how Cirq can be used with specific quantum hardware and reflects the emphasis on near-term quantum computing. The documentation also contains a detailed API reference for the entire library and development guidelines for those who may want to contribute to the source code.
 </p>
 </div>
 </div>
@@ -12023,7 +12023,7 @@ As in our previous coverage of quantum software platforms, we include example pr
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;Library imports for the article.&quot;&quot;&quot;</span>
@@ -12138,7 +12138,7 @@ While these diagrams are not of publication quality like those that can be made 
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><p style="text-align: justify;"> 
-Cirq does not currently provide cloud access to its quantum computers for general users. Indeed, as per the documentation in <a href="https://github.com/quantumlib/Cirq/blob/master/cirq/google/engine/engine.py">Cirq's engine class</a>:</p>
+Cirq does not currently provide cloud access to Google's quantum computers for general users. Indeed, as per the documentation in <a href="https://github.com/quantumlib/Cirq/blob/master/cirq/google/engine/engine.py">Cirq's engine class</a>:</p>
 <p style="text-align: justify;"> 
 </div>
 </div>
@@ -12389,7 +12389,7 @@ To run the random bit generator circuit above with the `Simulator`, we can do th
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="sd">&quot;&quot;&quot;Run the random number generator on the XmonSimulator.&quot;&quot;&quot;</span>
@@ -12418,7 +12418,7 @@ To run the random bit generator circuit above with the `Simulator`, we can do th
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Counter({0: 27, 1: 23})
+<pre>&lt;class &#39;collections.Counter&#39;&gt;
 </pre>
 </div>
 </div>
@@ -12432,7 +12432,7 @@ To run the random bit generator circuit above with the `Simulator`, we can do th
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p style="text-align: justify;"> 
-The output is returned as a `Counter` object (Python built-in in the `collections` library) that displays key-value pairs corresponding to the output and number of times that output was recorded. Cirq also provides the function `plot_state_histogram` to visualize the output distribution:
+The output is returned as a `Counter` object (Python built-in class in the `collections` library) that displays key-value pairs corresponding to the output and number of times that output was recorded. Cirq also provides the function `plot_state_histogram` to visualize the output distribution:
 </p>
 </div>
 </div>
@@ -12490,7 +12490,7 @@ The output is returned as a `Counter` object (Python built-in in the `collection
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p style="text-align: justify;"> 
-For such a simple quantum algorithm, any quantum computer simulator is essentially equivalent. However, as algorithms scale to larger numbers of qubits and larger numbers of gates, runtime of the simulator can become important. The best current methods for classically simulating quantum circuits peak somewhere around 50 qubits due to memory requirements. (Note that this is the memory limitations of the world's best supercomputers.) For a fixed number of qubits, better simulators can simulate circuits with lower overall runtime, a desirable feature for many applications. 
+For such a simple quantum algorithm, any quantum computer simulator is essentially equivalent. However, as algorithms scale to larger numbers of qubits and larger numbers of gates, runtime of the simulator can become important. The best current methods for classically simulating quantum circuits peak somewhere around 50 qubits due to memory limitations. (Note that this is the memory limitation of the world's best supercomputers, personal computers are typically much lower around 30 qubits.) For a fixed number of qubits, better simulators can simulate circuits with lower overall runtime and potentially even lower memory usage, which are desirable features for many applications. 
 </p><p style="text-align: justify;"> 
 Below we test the performance of Cirq's simulators along these lines. After, we discuss other important capabilities of quantum computer simulators such as noise modeling.
 </p>
@@ -12512,7 +12512,7 @@ Below we test the performance of Cirq's simulators along these lines. After, we 
 <p style="text-align: justify;"> 
 Here we test the performance of Cirq's simulators using random quantum circuits with different numbers of qubits and total depth. The particular form of the circuit we will consider consists of random single qubit rotations on all qubits, then a layer of entangling CNOT gates with one qubit randomly selected as the control. We define the layer of single qubit rotations plus the layer of entangling CNOTs to have a depth of one. (A circuit diagram is shown below in the article.)
 </p><p style="text-align: justify;"> 
-The code for testing the simulator is contained in a separate Python file called `cirq_code.py`. Within this file is a function called `sim_test` which inputs the number of qubits, depth of the circuit, number of times to run the circuit (also called _shots_ or _repetitions_), and which simulator in Cirq to use. This function creates a random circuit of the form described above, runs it for the desired number of times, then returns the wall clock time for how long it took. An example of using this function is shown in the code cell below.
+The code for testing the simulator is contained in a separate Python file called `cirq_code.py`. Within this file is a function called `sim_test` which inputs the number of qubits, depth of the circuit, number of times to run the circuit (also called <i>shots</i> or <i>repetitions</i>), and which simulator in Cirq to use. This function creates a random circuit of the form described above, runs it for the desired number of times, then returns the wall clock time for how long it took. An example of using this function is shown in the code cell below.
 </p>
 </div>
 </div>
@@ -12650,7 +12650,7 @@ Here the code takes noticeably longer to run. For many applications, simulating 
 <p style="text-align: justify;"> 
 As can be seen, the performance of the `XmonSimulator` and `Simulator` are similar in terms of overall runtime. Depending on the computer architecture, increasing the number of threads or _shards_ could increase the performance of the `XmonSimulator`. (This is discussed below in Section 2.) The maximum number of qubits that can be simulated depends on memory of the user's computer (more RAM implies larger circuits). The largest circuit the author attempted to run with the `Simulator` contained 26 qubits and a depth of 10 as defined above. This circuit finished running in just over one hour. Larger circuit instances throw `MemoryError`s on the author's computer. (For reference, on a similar circuit with a depth of 20, the state vector simulator in QISKit is able to simulate 25 qubits in 160 seconds, and the C++ simulator in ProjectQ is able to simulate 27 qubits in 504 seconds <a href="#LaR2018">[LaR2018]</a>.)
 </p><p style="text-align: justify;"> 
-The resource requirements (memory and runtime) for simulating larger circuits quickly reaches the limitations of current supercomputers. Researchers at Google are very interested in using a quantum computer to simulate some circuit that a classical computer cannot feasibly do, a feat called _quantum supremacy_. Cirq contains built-in functions for generating so-called "supremacy circuits," as can be seen below.
+The resource requirements (memory and runtime) for simulating larger circuits quickly reaches the limitations of current supercomputers. Researchers at Google are very interested in using a quantum computer to simulate some circuit that a classical computer cannot feasibly do, a feat called <i>quantum supremacy</i>. Cirq contains built-in functions for generating so-called "supremacy circuits," as can be seen below.
 </p>
 </div>
 </div>
@@ -12726,7 +12726,7 @@ As we've seen above, this small circuit using only three rows (six qubits) of Br
 <p style="text-align: justify;"> 
 While raw performance is an important aspect of simulators, other features such as noise capabilities and special-purpose simulators (e.g., Clifford circuit simulators) are equally if not more important. In particular, noise capabilities allow users to mimic the evolution on real quantum hardware and get better estimates of the performance of their algorithms. The software packages pyQuil and QISKit contain these features.
 </p><p style="text-align: justify;"> 
-Currently, Cirq does not contain any obvious support for noisy circuit simulation for either the `Simulator` or `XmonSimulator`. As Cirq is still in alpha testing, however, these features are likely to be implemented in future releases.
+Currently, Cirq does not contain any obvious support for noisy circuit simulation for either the `Simulator` or `XmonSimulator`. As Cirq is still in alpha testing, however, this feature is likely to be implemented in future releases and is a <a href="https://github.com/quantumlib/Cirq/issues/730">current work in progress</a>.
 </p><p style="text-align: justify;"> 
 For now, notable features of the simulators include multi-threading for the `XmonSimulator` and access to the wave function for both simulators. To get a simulator that uses multiple threads, we can pass an `XmonOptions` object specified with the number of threads into the `XmonSimulator`, as shown below.
 </p>
@@ -13379,7 +13379,17 @@ Cirq provides several utilities for quantum circuit optimization, which we demon
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p style="text-align: justify;"> 
-The random circuit we obtained is shown above. The first optimization pass we will try is `EjectZ`, which rewrites the circuit by attempting to push all $Z$ gates to the end of the circuit.
+The random circuit we obtained is shown above. Note that this function utilizes an `InsertStrategy` in Cirq, which "indicates preferences on how to add multiple operations to a circuit." In the above example, we used `InsertStrategy.EARLIEST`, which tells the circuit to push gates being inserted as far to the left as possible. Other strategies include `INLINE` and `NEW_THEN_INLINE`. 
+</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p style="text-align: justify;"> 
+The first optimization pass we will try is `EjectZ`, which rewrites the circuit by attempting to push all $Z$ gates to the end of the circuit.
 </p>
 </div>
 </div>
@@ -14277,12 +14287,31 @@ Here we can see that the state $\rho' := U(t) \rho U(t)^\dagger$ is the most dia
 <p style="text-align: justify;"> 
 In this final section we offer concluding remarks about Cirq. The purpose of this article was to introduce and analyze Cirq in a similar fashion to the paper <a href="#LaR2018">[LaR2018]</a> comparing Forest (pyQuil), QISKit, ProjectQ, and the Quantum Developer Kit (Q#). We hope at this point the reader will be able to come to his/her own conclusions about Cirq's place in the quantum software community. (Recalling again that Cirq is still alpha software.)
 </p><p style="text-align: justify;"> 
-In general, we find that Cirq is already a fantastic tool for writing, manipulating, optimizing, compiling, and simulating quantum circuits. The learning curve for Cirq is small as the language is written in Python and the syntax/organization of the code is very clean. (We do note that Cirq is written with function annotations in Python which in several cases can be rather verbose.) We expect the platform to keep improving as quantum hardware and other simulators are made available. We find the tools for working with variational quantum algorithms to be one of the best features of Cirq. (It should be noted that Forest has emphasis on this feature as well, but currently the functionality is smoother with Cirq in the author's opinion.) The integration with OpenFermion will likely lead to one of the best tools for quantum simulation algorithms. The simulators of Cirq are both great utilities though not as high-performance as the simulator in ProjectQ. Finally, we expect the quantum channel and stabilizer code features of Cirq to be interesting and useful once they are released.
+In general, we find that Cirq is already a fantastic tool for writing, manipulating, optimizing, compiling, and simulating quantum circuits. For beginners, the learning curve for Cirq is small as the language is written in Python and the syntax/organization of the code is very clean. (We do note that Cirq is written with function annotations in Python which in several cases can be rather verbose.) For experienced users, Cirq exposes details of the hardware to the programmer to maximize effective utilization of near-term processors.
 </p><p style="text-align: justify;"> 
-Probably the biggest missing feature of Cirq is the ability to simulate noisy quantum circuits, which Forest and QISKit do very well. (We expect this feature to be released in future versions.) As was seen in the quantum teleportation algorithm, the ability to implement classical operations in circuits, a feature emphasized by the Forest platform, is entirely missing in Cirq. Additionally, the documentation, tutorials, and library support of Cirq are much more sparse than Forest, QISKit, the QDK, and even ProjectQ. (Again, the alpha disclaimer is important here.) Currently, users of Cirq will not be able to connect to real quantum computers as they would with Forest, QISKit, or ProjectQ. Once Foxtail and/or Bristlecone are made available over the cloud, however, this will of course change.
+We expect the platform to keep improving as quantum hardware and other simulators are made available. We find the tools for working with variational quantum algorithms, including local simulators as opposed to cloud-based simulators, to be one of the best features of Cirq. (It should be noted that Forest has emphasis on this feature as well, but currently the functionality is smoother with Cirq in the author's opinion.) The integration with OpenFermion will likely lead to one of the best tools for quantum simulation algorithms, competing with IBM's <a href="https://qiskit.org/aqua">QISKit Aqua library</a>. The simulators of Cirq are both good utilities (though not as high-performance as other simulators such as in <a href="https://qiskit.org/aer">QISKit Aer</a> or ProjectQ) and will get better with the ongoing work on noise modeling. Additionally,  Finally, we expect the quantum channel and stabilizer code features of Cirq to be interesting and useful once they are released.
+</p><p style="text-align: justify;"> 
+As mentioned, probably the biggest missing feature of Cirq is the ability to simulate noisy quantum circuits, which Forest and QISKit do very well. (We expect this feature to be released in future versions.) As was seen in the quantum teleportation algorithm, the ability to implement classical operations in circuits, a feature emphasized by the Forest platform, is entirely missing in Cirq. Additionally, the documentation, tutorials, and library support of Cirq are much more sparse than Forest, QISKit, the QDK, and even ProjectQ. (Again, the alpha disclaimer is important here.) Currently, users of Cirq will not be able to connect to real quantum computers as they would with Forest, QISKit, or ProjectQ. Once Foxtail and/or Bristlecone are made available over the cloud, however, this will of course change.
 </p><p style="text-align: justify;"> 
 The addition of Cirq to the quantum software community provides excellent tools for working with circuits for near-term quantum computers, and will soon offer connectivity to some of the world's most advanced quantum computers. We hope that this article provides a fair introduction and overview of the platform. For readers who wish to explore Cirq further, we recommend the <a href="https://cirq.readthedocs.io/en/stable/api.html">API Reference of the documentation.</a>
 </p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="-Acknowledgements-"><p style="text-align: center;"> Acknowledgements </p><a class="anchor-link" href="#-Acknowledgements-">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The author thanks Doug Finke from Quantum Computing Report for many useful comments. We both thank Alan Ho from Google for reviewing the article and providing feedback.</p>
+
 </div>
 </div>
 </div>

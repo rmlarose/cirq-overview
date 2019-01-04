@@ -13,21 +13,22 @@ The notebook version of the article is hosted in this GitHub repository.
 
 ## Online Version Using Binder
 
-Execute the notebook online at [this link](https://mybinder.org/v2/gh/rmlarose/cirq-overview/master?filepath=article%2Fnotebook%2Fcirq.ipynb
-) using [Binder](https://mybinder.org/), an cloud platform for interactively executing Jupyter notebooks. Here, be sure to uncomment the lines in the notebook for installing Cirq since it's not natively installed on Binder.
+Run the notebook online at [this link](https://mybinder.org/v2/gh/rmlarose/cirq-overview/master?filepath=article%2Fnotebook%2Fcirq.ipynb
+) using [Binder](https://mybinder.org/), a cloud platform for interactively executing Jupyter notebooks. Here, be sure to uncomment the lines in the notebook for installing Cirq since it's not natively installed on Binder.
 
 ## Local Version Using Jupyter
 
 ### Requirements
 
-In order to run the notebook, a working installation of [Jupyter](https://jupyter.org/) is required. Python 3 is required for Cirq. Instructions for installing Cirq can be found in the notebook.
+In order to run the notebook, a working installation of [Jupyter](https://jupyter.org/) is required. Python 3 is required for Cirq. Instructions for installing Cirq can be found in the article or at the links to Cirq below.
 
 ### Instructions
 
 Option 1: Clone the repository.
 
-1. Execute the following git command at a terminal:
+1. Execute the following git commands at a terminal:
 ```git clone https://github.com/rmlarose/cirq-overview```
+
 ```cd cirq-overview/article/notebook```
 1. Open the notebook "cirq.ipynb" using Jupyter.
 

@@ -1,3 +1,5 @@
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/rmlarose/cirq-overview/master?filepath=article%2Fnotebook%2Fcirq.ipynb)
+
 # Practical Quantum Computing with Cirq
 Companion notebook and code for the article "Practical Quantum Computing with Cirq."
 
@@ -11,7 +13,8 @@ The notebook version of the article is hosted in this GitHub repository.
 
 ## Online Version Using Binder
 
-Execute the notebook online at [this link](https://hub.mybinder.org/user/rmlarose-cirq-overview-codsxu89/notebooks/article/notebook/cirq.ipynb) using [Binder](https://mybinder.org/), an cloud platform for interactively executing Jupyter notebooks. Here, be sure to uncomment the lines in the notebook for installing Cirq since it's not natively installed on Binder.
+Execute the notebook online at [this link](https://mybinder.org/v2/gh/rmlarose/cirq-overview/master?filepath=article%2Fnotebook%2Fcirq.ipynb
+) using [Binder](https://mybinder.org/), an cloud platform for interactively executing Jupyter notebooks. Here, be sure to uncomment the lines in the notebook for installing Cirq since it's not natively installed on Binder.
 
 ## Local Version Using Jupyter
 

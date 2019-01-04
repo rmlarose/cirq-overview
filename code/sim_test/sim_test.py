@@ -1,24 +1,15 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-
-# =============================================================================
-# sim_test.py
-#
-# Testing out the simulator in Cirq.
-#
-# written by Ryan LaRose <laroser1@msu.edu>
-# at Michigan State University August 2018.
-# =============================================================================
+"""Code for testing out the simulators in Cirq."""
 
 # =============================================================================
 # imports
 # =============================================================================
 
-import cirq
-
-import numpy as np
 import sys
 import time
+
+import numpy as np
+
+import cirq
 
 # =============================================================================
 # constants
@@ -39,8 +30,7 @@ oneq_ops = {1 : cirq.X,
 def sim_test(nqubits, depth, nreps, 
              insert_strategy=cirq.InsertStrategy.EARLIEST, 
              verbose=False, sim_type=0):
-    """
-    Cirq Simulator test for a circuit structure of layers consisting of
+    """Cirq Simulator test for a circuit structure of layers consisting of
     random one qubit rotations and CNOTs between all qubits.
     
     input:
@@ -84,8 +74,7 @@ def sim_test(nqubits, depth, nreps,
     # =========================================================================
     
     def rot(qubit, params):
-        """
-        Helper function to return an arbitrary rotation of the form
+        """Helper function to return an arbitrary rotation of the form
         R = Rz(params[2]) * Ry(params[1]) * Rx(params[0])
         on the qubit.
         """
@@ -124,51 +113,12 @@ def sim_test(nqubits, depth, nreps,
     simulator.run(circ, repetitions=nreps)
     return (time.time() - start) / nreps
 
-def random_circuit(num_qubits, depth, 
-                   oneq_ops_dict=oneq_ops):
-    """Returns a circuit with one qubit gates selected at random from
-    'oneq_ops_dict' for a specified number of qubits 'num_qubits'
-    and depth 'depth'.
-    
-    Args:
-        num_qubits [type: int]
-            number of qubits in the circuit
-
-        depth [type: int]
-            number of single qubit gates to append to the circuit
-
-        oneq_ops_dict [type: dict]
-            dictionary of one qubit operations with (key, value) pairs that
-            consist of (integer key, gate)
-
-    Returns:
-        A cirq.Circuit with 'num_qubits' qubits and 'depth' total single
-        qubit gates selected at random from 'oneq_ops_dict'.
-    """
-    # create a circuit
-    circ = cirq.Circuit()
-
-    # loop over the depth
-    for _ in range(depth):
-        # select random integers corresponding to gates to append to circuit
-        op_keys = np.random.randint(1, len(oneq_ops) + 1, num_qubits)
-
-        # append the gates to the circuit
-        circ.append(
-            [oneq_ops[key](q) for (q, key) in enumerate(op_keys)],
-            strategy=cirq.InsertStrategy.EARLIEST
-            )
-
-    return circ
-
 # =============================================================================
 # main 
 # =============================================================================
 
 def main():
-    """
-    Main function for the script.
-    """
+    """Main function for the script."""
     # grab user input    
     if len(sys.argv) >= 2:
         nqubits = int(sys.argv[1])

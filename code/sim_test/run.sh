@@ -2,10 +2,7 @@
 # ================================================================================
 # run.sh
 #
-# Bash script wrapper for python code to test Cirq's XmonSimulator performance.
-#
-# written by Ryan LaRose <laroser1@msu.edu>
-# at Michigan State University August 2018.
+# Bash script wrapper for python code to test Cirq's simulator performance.
 # ================================================================================
 
 # ============

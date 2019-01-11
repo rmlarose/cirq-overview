@@ -30,7 +30,7 @@ Option 1: Clone the repository.
 ```git clone https://github.com/rmlarose/cirq-overview```
 
 ```cd cirq-overview/article/notebook```
-1. Open the notebook "cirq.ipynb" using Jupyter.
+2. Open the notebook "cirq.ipynb" using Jupyter.
 
 Option 2: Download the repository manually.
 
